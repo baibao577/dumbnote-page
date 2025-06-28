@@ -41,3 +41,5 @@
 - 📤 Pure markdown — Works with any editor, forever
 
 > No subscriptions. No cloud dependency. Just fast, reliable note-taking.
+
+Github: https://github.com/baibao577/dumbnote-page
