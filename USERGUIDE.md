@@ -10,20 +10,23 @@ A powerful markdown note-taking app with smart features for productive writing.
 
 ## 🎯 Smart Features Overview
 
-- 🎯 **Smart typing** — Auto-complete lists, bullets, and checkboxes
-- 🎯 **Drag & drop everything** — Images, PDFs, any file type as attachments
-- 🎯 **Live preview** — See images and attachments inline while writing
-- 🎯 **Folding** — Collapse sections for better document navigation
-- 🎯 **Quick emoji** — Type `::` for instant emoji picker
-- 🎯 **Zen mode** — Clean, dark, distraction-free writing environment
-- 🎯 **Markdown shortcuts** — Bold, italic, code blocks with hotkeys
-- 🎯 **Tag filtering** — Organize with #tags and filter instantly
-- 🎯 **HTML paste conversion** — Copy from web, auto-converts to Markdown
-- 🎯 **Smart indentation** — Perfect for code snippets and nested lists
-- 🎯 **Syntax highlighting** — Code blocks with language-specific highlighting
-- 🎯 **Sticky scroll context** — Always see which heading section you're in
-- 🎯 **Multi-window support** — Open notes in multiple windows
-- 🎯 **Fully offline** — Works completely without internet connection
+- **Smart typing** — Auto-complete lists, bullets, and checkboxes
+- **Drag & drop everything** — Images, PDFs, any file type as attachments
+- **Live preview** — See images and attachments inline while writing
+- **Folding** — Collapse sections for better document navigation
+- **Quick emoji** — Type `::` for instant emoji picker (click or arrow keys!)
+- **Wiki-style linking** — Type `[[` to quickly link to other notes
+- **Clickable note links** — Click any note link to jump between notes
+- **Smart favorites** — Organize important notes with collapsible favorites section
+- **Zen mode** — Clean, dark, distraction-free writing environment
+- **Markdown shortcuts** — Bold, italic, code blocks with hotkeys
+- **Tag filtering** — Organize with #tags and filter instantly
+- **HTML paste conversion** — Copy from web, auto-converts to Markdown
+- **Smart indentation** — Perfect for code snippets and nested lists
+- **Syntax highlighting** — Code blocks with language-specific highlighting
+- **Sticky scroll context** — Always see which heading section you're in
+- **Multi-window support** — Open notes in multiple windows
+- **Fully offline** — Works completely without internet connection
 - 🚀 **GitHub Gist integration** — Publish notes as public/private Gists with one click (requires internet)
 - 📤 **PDF export** — One-click beautiful documents
 - 📤 **ZIP archive** — Bulk export all notes + attachments
@@ -52,7 +55,28 @@ A powerful markdown note-taking app with smart features for productive writing.
 ### Emoji Magic ✨
 
 - Type `::` → Opens emoji picker instantly
+- **Use arrow keys** to navigate up/down through emojis
+- **Click any emoji** with your mouse to insert it
+- **Press Enter** to insert the highlighted emoji
 - Copy emojis from anywhere and paste directly
+
+### Wiki-Style Note Linking 🔗
+
+**Super easy way to link to other notes:**
+
+1. Type `[[` anywhere in your note
+2. A popup appears showing all your notes
+3. **Type to search** for the note you want
+4. **Use arrow keys** to navigate the list
+5. **Press Enter** or **click** to select
+6. Automatically converts to proper markdown link!
+
+**Example:**
+
+- You type: `[[meeting notes]]`
+- DumbNote converts to: `[Meeting Notes](meeting-notes.md)`
+
+**Pro tip:** The popup is searchable - just start typing the note name!
 
 ## 🔍 Search & Organization
 
@@ -78,6 +102,24 @@ priority: high
 - **In-editor search**: `⌘F` to search within current note
 - **Search by tag**: Click any tag in the sidebar to filter
 - **Recent notes**: Always sorted by last modified
+
+### Smart Favorites Organization ⭐
+
+**Keep your most important notes at the top:**
+
+- **Star any note** by clicking the ⭐ icon in the toolbar
+- **Favorites section** appears at the top of your notes list
+- **Shows 5 favorites by default** with "Show more..." option
+- **Click to expand** all favorites when you need them
+- **Automatically collapses** back to 5 when you close the section
+- **Always accessible** - favorites section stays visible when scrolling
+
+**Perfect for:**
+
+- Daily notes you reference often
+- Project templates
+- Important meeting notes
+- Quick reference guides
 
 ## 📎 File & Attachment Mastery
 
@@ -106,10 +148,28 @@ priority: high
 
 - **Right-click** any note → "Open in New Window"
 - **Menu**: File → Open in New Window
+- **Click any note link** → Opens in new window automatically
+- **Ctrl/Cmd + Click note link** → Opens in current window
 - Perfect for:
   - Comparing notes side by side
   - Reference material while writing
   - Multi-monitor setups
+  - Following note links without losing your place
+
+### Clickable Note Navigation 🖱️
+
+**Easy navigation between linked notes:**
+
+- **Normal click** on any `[Note Title](note.md)` link → Opens in **new window**
+- **Ctrl/Cmd + click** → Opens in **current window** (replaces current note)
+- **Hover over links** to see tooltip with navigation options
+- **Perfect for research** - keep multiple notes open while following links
+
+**Example:**
+If you have `[Project Plan](project-plan.md)` in your note:
+
+- Click it → New window opens with Project Plan
+- Ctrl+Click it → Current window switches to Project Plan
 
 ## 🌐 Sharing & Export
 
@@ -155,6 +215,18 @@ priority: high
 - Minimal distractions
 - Syntax highlighting for better readability
 - Optimized typography for long writing sessions
+
+### Smart Sidebar Layout
+
+**Organized for productivity:**
+
+- **Search & Tags** always visible at the top (no more scrolling to find them!)
+- **Favorites section** shows your starred notes first
+- **All notes** section below with full scrolling
+- **Collapsible sections** - hide what you don't need
+- **Smooth scrolling** through large note collections
+
+**No more hunting for controls** - search and tag filters stay put while you scroll through hundreds of notes!
 
 ## 💡 Power User Tips
 
@@ -208,6 +280,24 @@ favorite: true
 - Use descriptive filenames
 - Keep attachments folder with notes for portability
 - Regular exports for backup
+
+### Productivity Workflows
+
+**The "Research Web" workflow:**
+
+1. Start with a main topic note
+2. Use `[[` to quickly link to related notes as you write
+3. Click links to open references in new windows
+4. Keep multiple windows open for cross-referencing
+5. Star important notes for quick access
+
+**The "Project Hub" workflow:**
+
+1. Create a main project note
+2. Star it so it appears in favorites
+3. Link to all related notes using `[[project-name]]`
+4. Use the favorites section as your project dashboard
+5. Jump between project notes with single clicks
 
 ## ⌨️ Complete Keyboard Shortcuts
 

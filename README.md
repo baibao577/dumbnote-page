@@ -5,39 +5,46 @@
 > DumbNote is a lightning-fast Markdown note app — perfect for those surprise calls, impromptu meetings, or quick debriefs where every second counts. **Open, type, and capture — before the moment passes**.
 
 **Download:**
-[macOS (Intel)](https://github.com/baibao577/dumbnote-page/releases/download/v.1.3.0/DumbNote-1.3.0.dmg) |
-[macOS (Apple Silicon)](https://github.com/baibao577/dumbnote-page/releases/download/v.1.3.0/DumbNote-1.3.0-arm64.dmg) |
-[Windows](https://github.com/baibao577/dumbnote-page/releases/download/v.1.3.0/DumbNote.Setup.1.3.0.exe)
+[macOS (Intel)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-x64.dmg) |
+[macOS (Apple Silicon)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.dmg) |
+[Windows](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-win-x64.exe)
 
-## Why DumbNote?
+## ✅ Why DumbNote?
 
-- ✅ Your data, your format — Notes stored as plain `.md` files. No vendor lock-in, ever.
-- ✅ Lightning-fast search — Find anything instantly with global + in-note search.
-- ✅ One-click PDF export — Share, print, or archive with beautiful formatting.
-- ✅ Open multiple notes simultaneously.
-- ✅ Pure markdown — Works with any editor, forever.
-- ✅ Export to web for sharing with others.
+- **Your data, your format** — Notes stored as plain `.md` files. No vendor lock-in, ever.
+- **Lightning-fast** search — Find anything instantly with global + in-note search.
+- One-click PDF export — Share, print, or archive with beautiful formatting.
+- Open multiple notes simultaneously.
+- Pure markdown — **Works with any editor, forever.**
+- **Export to web** for sharing with others.
+- Import markdown file to Dumbnote
 
 ## Built for Flow
 
-- **“just write.”**
-- 🎯 Smart typing — Auto-complete lists, bullets, and checkboxes
-- 🎯 Drag & drop everything — Images, PDFs, any file type as attachments
-- 🎯 Live preview — See images and attachments inline while writing
-- 🎯 Folding — Collapse sections for better document navigation
-- 🎯 Quick emoji — Type `::` for instant emoji picker
-- 🎯 Zen mode — Clean, dark, distraction-free writing environment
-- 🎯 Markdown shortcuts — Bold, italic, code blocks with hotkeys
-- 🎯 Tag filtering — Organize with #tags and filter instantly
-- 🎯 HTML paste conversion — Copy from web, auto-converts to Markdown
-- 🎯 Smart indentation — Perfect for code snippets and nested lists
-- 🎯 Syntax highlighting
-- 🚀 GitHub Gist integration — Publish notes as public/private Gists with one click
+- **“JUST WRITE.”**
+- **Smart typing** — Auto-complete lists, bullets, and checkboxes
+- **Drag & drop everything** — Images, PDFs, any file type as attachments
+- **Live preview** — See images and attachments inline while writing
+- **Folding** — Collapse sections for better document navigation
+- **Quick emoji** — Type `::` for instant emoji picker (click or arrow keys!)
+- **Wiki-style linking** — Type `[[` to quickly link to other notes
+- **Clickable note links** — Click any note link to jump between notes
+- **Smart favorites** — Organize important notes with collapsible favorites section
+- **Zen mode** — Clean, dark, distraction-free writing environment
+- **Markdown shortcuts** — Bold, italic, code blocks with hotkeys
+- **Tag filtering** — Organize with #tags and filter instantly
+- **HTML paste conversion** — Copy from web, auto-converts to Markdown
+- **Smart indentation** — Perfect for code snippets and nested lists
+- **Syntax highlighting** — Code blocks with language-specific highlighting
+- **Sticky scroll context** — Always see which heading section you're in
+- **Multi-window support** — Open notes in multiple windows
+- **Fully offline** — Works completely without internet connection
+- 🚀 **GitHub Gist integration** — Publish notes as public/private Gists with one click (requires internet)
 
 ## Export Anywhere
 
-- 📤 PDF export — One-click beautiful documents
-- 📤 ZIP archive — Bulk export all notes + attachments
+- 📤 **PDF export** — One-click beautiful documents
+- 📤 **ZIP archive** — Bulk export all notes + attachments
 - 📤 Pure markdown — Works with any editor, forever
 
 > No subscriptions. No cloud dependency. Just fast, reliable note-taking.
