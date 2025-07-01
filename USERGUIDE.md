@@ -16,6 +16,7 @@ A powerful markdown note-taking app with smart features for productive writing.
 - **Folding** — Collapse sections for better document navigation
 - **Quick emoji** — Type `::` for instant emoji picker (click or arrow keys!)
 - **Wiki-style linking** — Type `[[` to quickly link to other notes
+- **Date Shortcuts** - `@today`, `@date`, and `@time` expand to formatted timestamps
 - **Clickable note links** — Click any note link to jump between notes
 - **Smart favorites** — Organize important notes with collapsible favorites section
 - **Zen mode** — Clean, dark, distraction-free writing environment
@@ -27,6 +28,7 @@ A powerful markdown note-taking app with smart features for productive writing.
 - **Sticky scroll context** — Always see which heading section you're in
 - **Multi-window support** — Open notes in multiple windows
 - **Fully offline** — Works completely without internet connection
+- **Spellcheck Support** - Enable/Disable via Edit menu
 - 🚀 **GitHub Gist integration** — Publish notes as public/private Gists with one click (requires internet)
 - 📤 **PDF export** — One-click beautiful documents
 - 📤 **ZIP archive** — Bulk export all notes + attachments
