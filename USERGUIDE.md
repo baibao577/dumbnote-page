@@ -29,7 +29,8 @@ A powerful markdown note-taking app with smart features for productive writing.
 - **Multi-window support** — Open notes in multiple windows
 - **Fully offline** — Works completely without internet connection
 - **Spellcheck Support** - Enable/Disable via Edit menu
-- 🚀 **GitHub Gist integration** — Publish notes as public/private Gists with one click (requires internet)
+- **GitHub Gist integration** — Publish notes as public/private Gists with one click (requires internet)
+- **GitHub Sync** - Manual sync to private GitHub repository by Sync menu (`Ctrl/Cmd+Shift+S`)
 - 📤 **PDF export** — One-click beautiful documents
 - 📤 **ZIP archive** — Bulk export all notes + attachments
 
