@@ -112,6 +112,126 @@ ul {
   border-color: #ff69b4;
 }
 
+/* Troubleshooting Section */
+.troubleshooting {
+  max-width: 600px;
+  margin: 30px auto 0;
+  padding: 0 20px;
+}
+
+.troubleshooting-title {
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.troubleshooting-details {
+  background: rgba(255, 105, 180, 0.05);
+  border: 1px solid rgba(255, 105, 180, 0.2);
+  border-radius: 8px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.troubleshooting-details summary {
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: #ff69b4;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+  user-select: none;
+}
+
+.troubleshooting-details summary:hover {
+  background: rgba(255, 105, 180, 0.08);
+}
+
+.troubleshooting-details[open] summary {
+  border-bottom: 1px solid rgba(255, 105, 180, 0.2);
+}
+
+.troubleshooting-content {
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.troubleshooting-content p {
+  margin-bottom: 15px;
+}
+
+.troubleshooting-option {
+  margin-bottom: 25px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 6px;
+}
+
+.troubleshooting-option:last-child {
+  margin-bottom: 0;
+}
+
+.troubleshooting-option h4 {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.troubleshooting-option ol {
+  margin-left: 20px;
+  color: #666;
+}
+
+.troubleshooting-option li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+.command-block {
+  display: block;
+  background: #f5f5f5;
+  border: 1px solid #e0e0e0;
+  border-radius: 4px;
+  padding: 10px 15px;
+  margin: 8px 0;
+  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-size: 0.85rem;
+  color: #333;
+  user-select: all;
+  cursor: text;
+}
+
+.troubleshooting-note {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 10px;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  .troubleshooting {
+    margin-top: 20px;
+  }
+  
+  .troubleshooting-details summary {
+    font-size: 0.85rem;
+    padding: 10px 15px;
+  }
+  
+  .troubleshooting-content {
+    padding: 15px;
+  }
+  
+  .command-block {
+    font-size: 0.75rem;
+    padding: 8px 12px;
+  }
+}
+
 .app-icon {
   width: 240px;
   height: 240px;
