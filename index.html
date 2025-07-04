@@ -38,13 +38,13 @@
         <h2 class="download-title">Download</h2>
         <div class="download">
           <a
-            href="https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-x64.dmg"
+            href="https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-x64.pkg"
             class="download-btn"
           >
             macOS (Intel)
           </a>
           <a
-            href="https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.dmg"
+            href="https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.pkg"
             class="download-btn"
           >
             macOS (Apple Silicon)
@@ -65,31 +65,12 @@
             <div class="troubleshooting-content">
               <p><strong>If you see a security warning when opening DumbNote:</strong></p>
               
-              <div class="troubleshooting-option">
-                <h4>Option 1: Easy Fix (Recommended)</h4>
-                <p>Install DumbNote using Homebrew to avoid security warnings:</p>
+              <div>
                 <ol>
-                  <li>Open the Terminal app (find it in Applications → Utilities)</li>
-                  <li>Copy and paste this command:
-                    <code class="command-block">brew install --cask baibao577/dumbnote-page/dumbnote</code>
-                  </li>
-                  <li>Press Enter and wait for installation to complete</li>
-                  <li>DumbNote will now open without any warnings!</li>
+                  <li><b>Right Click</b> on "DumbNote-mac-arm64.pkg" file, then select Open</li>
+                  <li>Once installation dialog appear, Click <b>install</b> and next</li>
+                  <li>After that DumbNote is ready in your Applications folder</li>
                 </ol>
-              </div>
-              
-              <div class="troubleshooting-option">
-                <h4>Option 2: Fix the Downloaded App</h4>
-                <p>If you already downloaded DumbNote from the DMG file:</p>
-                <ol>
-                  <li>Open the Terminal app (find it in Applications → Utilities)</li>
-                  <li>Copy and paste this command exactly:
-                    <code class="command-block">xattr -cr /Applications/DumbNote.app</code>
-                  </li>
-                  <li>Press Enter</li>
-                  <li>You can now open DumbNote normally!</li>
-                </ol>
-                <p class="troubleshooting-note">💡 This removes the quarantine flag that macOS adds to downloaded apps for security.</p>
               </div>
             </div>
           </details>

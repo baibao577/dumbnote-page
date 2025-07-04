@@ -5,8 +5,8 @@
 > DumbNote is a lightning-fast Markdown note app — perfect for those surprise calls, impromptu meetings, or quick debriefs where every second counts. **Open, type, and capture — before the moment passes**.
 
 **Download:**
-[macOS (Intel)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-x64.dmg) |
-[macOS (Apple Silicon)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.dmg) |
+[macOS (Intel)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-x64.pkg) |
+[macOS (Apple Silicon)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.pkg) |
 [Windows](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-win-x64.exe)
 
 ## ✅ Why DumbNote?
