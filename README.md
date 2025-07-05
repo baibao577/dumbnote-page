@@ -9,6 +9,12 @@
 [macOS (Apple Silicon)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.pkg) |
 [Windows](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-win-x64.exe)
 
+If you see warning when install macOS, please follow this [step from Apple Guide](https://support.apple.com/en-eg/guide/mac-help/mchleab3a043/mac)
+
+- **Right Click** on "DumbNote-mac-arm64.pkg" file, then **select Open**
+- Once installation dialog appear, Click install and next
+- After that DumbNote is ready in your Applications folder
+
 ## ✅ Why DumbNote?
 
 - **Your data, your format** — Notes stored as plain `.md` files. No vendor lock-in, ever.
