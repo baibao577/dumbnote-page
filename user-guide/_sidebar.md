@@ -1,5 +1,5 @@
 * **Getting Started**
-  * [Home](/)
+  * [Home](README.md)
   * [Installation & First Steps](getting-started.md)
   * [Editor Features](editor-features.md)
   * [Markdown Guide](markdown-guide.md)
