@@ -6,9 +6,7 @@
 
 ## Download
 
-**macOS**: [Universal Package (.pkg)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac.pkg)  
-**Windows**: [Installer (.exe)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-win-x64.exe)  
-**Linux**: Coming soon
+[**Download DumbNote**](https://github.com/baibao577/dumbnote-page/releases/latest) for macOS, Windows, or Linux.
 
 _macOS users: If you see a security warning, right-click the .pkg file and select "Open", then click "Install"._
 
