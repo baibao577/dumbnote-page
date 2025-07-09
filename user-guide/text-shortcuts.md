@@ -341,4 +341,4 @@ If you need to type literal shortcuts without expansion:
 
 ---
 
-Next: Learn about **[File Management](file-management.md)** in DumbNote →
+Next: Working with **[Attachments](attachments.md)** in DumbNote →

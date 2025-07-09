@@ -206,27 +206,23 @@ Hide the sidebar for distraction-free writing:
 - Keyboard: `Cmd/Ctrl+\`
 - Menu: `View → Toggle Sidebar`
 
+### Try Typewriter Mode
+
+Keep your cursor centered on screen:
+
+- Press `Cmd/Ctrl+Shift+T` to enable
+- Your cursor stays in the middle while text moves
+- Perfect for long writing sessions
+
 ## Your Notes Folder
 
-DumbNote stores all notes in a local folder:
+To quickly access your notes folder, use **File → Go to Notes Folder**. This opens your notes directory in your system's file manager.
 
-### Default Locations
-
-- **macOS**: `~/Documents/DumbNotes`
-- **Windows**: `C:\Users\[Username]\Documents\DumbNotes`
-- **Linux**: `~/Documents/DumbNotes`
-
-### Change Notes Location
-
-1. Go to `File → Preferences`
-2. Click "Change Notes Folder"
-3. Select your preferred location
-
-### Important Files
+DumbNote organizes your files as:
 
 - `*.md` - Your markdown notes
 - `attachments/` - Embedded images and files
-- `.dumbnote/` - App settings and cache
+- `.dumbnote/` - App settings and cache (hidden)
 
 ## Next Steps
 
@@ -234,8 +230,8 @@ Now that you've created your first note, explore these features:
 
 1. **[Learn Markdown](markdown-guide.md)** - Master markdown syntax
 2. **[Keyboard Shortcuts](keyboard-shortcuts.md)** - Work faster
-3. **[File Management](file-management.md)** - Organize your notes
-4. **[Themes](themes-customization.md)** - Customize appearance
+3. **[Tags, Favorites & Hub View](tags-favorites-hub.md)** - Organize your notes
+4. **[GitHub Sync](github-sync.md)** - Backup your notes
 
 ## Tips for New Users
 
@@ -268,7 +264,7 @@ Now that you've created your first note, explore these features:
 
 ### Online Resources
 
-- [GitHub Issues](https://github.com/slhmy/note-markdown/issues) - Report bugs
+- [GitHub Issues](https://github.com/baibao577/dumbnote-page/issues) - Report bugs
 - [User Guide](index.md) - This documentation
 - [FAQ](faq.md) - Common questions
 

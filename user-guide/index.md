@@ -48,19 +48,16 @@ DumbNote is a feature-rich markdown editor that combines the power of VS Code's 
 
 ### Writing & Editing
 - **[Text Shortcuts](text-shortcuts.md)** - Auto-completions and expansions
-- **[Spellcheck](spellcheck.md)** - Spelling assistance
+- **[Typewriter Mode](typewriter-mode.md)** - Keep your cursor centered while writing
 
-### File & Content Management
-- **[File Management](file-management.md)** - Create, import, and manage notes
+### Content Management
 - **[Attachments](attachments.md)** - Working with images and files
 - **[Export & Sharing](export-sharing.md)** - Export and share your notes
 
-### Navigation & Organization
-- **[Navigation & Search](navigation-search.md)** - Find and navigate efficiently
-- **[Organization](organization.md)** - Tags, favorites, and grouping
+### Organization
+- **[Tags, Favorites & Hub View](tags-favorites-hub.md)** - Organize notes with tags, mark favorites, and visualize connections
 
-### Customization & Sync
-- **[Themes & Customization](themes-customization.md)** - Personalize your experience
+### Sync & Backup
 - **[GitHub Sync](github-sync.md)** - Backup and sync with GitHub
 
 ### Advanced Topics
