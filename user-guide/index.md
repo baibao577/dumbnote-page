@@ -9,30 +9,35 @@ DumbNote is a feature-rich markdown editor that combines the power of VS Code's 
 ## Key Features
 
 ### 🚀 Powerful Editor
+
 - **Monaco Editor** - The same editor that powers VS Code
 - **Markdown Preview** - Live preview with custom themes
 - **Syntax Highlighting** - Full language support for code blocks
 - **Smart Completions** - Auto-complete for dates, symbols, and emojis
 
 ### 📁 Smart File Management
+
 - **Linked Notes** - Create connections between your notes
 - **Attachments** - Drag and drop any file type
 - **Import/Export** - Multiple format support
 - **Multi-window** - Work with multiple notes simultaneously
 
 ### 🎨 Customization
+
 - **Theme System** - Built-in themes plus custom theme editor
 - **Adjustable UI** - Font size, line height, and more
 - **Typewriter Mode** - Keep your focus centered
 - **System Integration** - Follows your OS dark/light mode
 
 ### 🔍 Organization & Search
+
 - **Full-text Search** - Instant search across all notes
 - **Tags** - Organize with YAML frontmatter
 - **Link Grouping** - Visualize note connections
 - **Outline Navigation** - Jump between sections
 
 ### ☁️ Sync & Share
+
 - **GitHub Sync** - Backup to private repositories
 - **Export Options** - PDF, Markdown, ZIP archives
 - **GitHub Gists** - Share notes publicly or privately
@@ -47,28 +52,32 @@ DumbNote is a feature-rich markdown editor that combines the power of VS Code's 
 ## Feature Guides
 
 ### Writing & Editing
+
 - **[Text Shortcuts](text-shortcuts.md)** - Auto-completions and expansions
 - **[Typewriter Mode](typewriter-mode.md)** - Keep your cursor centered while writing
 
 ### Content Management
+
 - **[Attachments](attachments.md)** - Working with images and files
 - **[Export & Sharing](export-sharing.md)** - Export and share your notes
 
 ### Organization
+
 - **[Tags, Favorites & Hub View](tags-favorites-hub.md)** - Organize notes with tags, mark favorites, and visualize connections
 
 ### Sync & Backup
+
 - **[GitHub Sync](github-sync.md)** - Backup and sync with GitHub
 
 ### Advanced Topics
+
 - **[Advanced Features](advanced-features.md)** - Power user features
 - **[Troubleshooting](troubleshooting.md)** - Solve common issues
 - **[FAQ](faq.md)** - Frequently asked questions
 
 ## Getting Help
 
-- **In-app Help**: Press `F1` or `Cmd/Ctrl+?` for context-sensitive help
-- **GitHub Issues**: Report bugs or request features on our [GitHub repository](https://github.com/slhmy/note-markdown)
+- **GitHub Issues**: Report bugs or request features on our [GitHub repository](https://github.com/baibao577/dumbnote-page/issues)
 - **Community**: Join discussions and share tips with other users
 
 ## System Requirements

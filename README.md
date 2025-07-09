@@ -1,76 +1,92 @@
 # DumbNote
 
-![Dumbnote Screenshot](attachments/dumbnote_screenshot.png)
+![DumbNote Screenshot](assets/images/dumbnote_emoji.png)
 
-> DumbNote is a lightning-fast Markdown note app — perfect for those surprise calls, impromptu meetings, or quick debriefs where every second counts. **Open, type, and capture — before the moment passes**.
+> Lightning-fast markdown notes for surprise calls, quick meetings, and sudden ideas. **Open, type, capture — before the moment passes**.
 
-**Download:**
-[macOS (Intel)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-x64.pkg) |
-[macOS (Apple Silicon)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac-arm64.pkg) |
-[Windows](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-win-x64.exe)
+## Download
 
-If you see warning when install macOS, please follow this [step from Apple Guide](https://support.apple.com/en-eg/guide/mac-help/mchleab3a043/mac)
+**macOS**: [Universal Package (.pkg)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-mac.pkg)  
+**Windows**: [Installer (.exe)](https://github.com/baibao577/dumbnote-page/releases/latest/download/DumbNote-win-x64.exe)  
+**Linux**: Coming soon
 
-- **Right Click** on "DumbNote-mac-arm64.pkg" file, then **select Open**
-- Once installation dialog appear, Click install and next
-- After that DumbNote is ready in your Applications folder
+_macOS users: If you see a security warning, right-click the .pkg file and select "Open", then click "Install"._
 
-## ✅ Why DumbNote?
+## Why DumbNote?
 
-- **Your data, your format** — Notes stored as plain `.md` files. No vendor lock-in, ever.
-- **Lightning-fast** search — Find anything instantly with global + in-note search.
-- One-click PDF export — Share, print, or archive with beautiful formatting.
-- Open multiple notes simultaneously.
-- Pure markdown — **Works with any editor, forever.**
-- **Export to web** for sharing with others.
-- Import markdown file to Dumbnote
+**Your notes, your way**
 
-## Built for Flow
+- Plain `.md` files on your computer
+- No vendor lock-in, no subscriptions
+- Works offline, syncs when you want
+- Compatible with any markdown editor
 
-- **“JUST WRITE.”**
-- **Smart typing** — Auto-complete lists, bullets, and checkboxes
-- **Drag & drop everything** — Images, PDFs, any file type as attachments
-- **Live preview** — See images and attachments inline while writing
-- **Folding** — Collapse sections for better document navigation
-- **Quick emoji** — Type `::` for instant emoji picker (click or arrow keys!)
-- **Wiki-style linking** — Type `[[` to quickly link to other notes
-- **Clickable note links** — Click any note link to jump between notes
-- **Smart favorites** — Organize important notes with collapsible favorites section
-- **Zen mode** — Clean, dark, distraction-free writing environment
-- **Markdown shortcuts** — Bold, italic, code blocks with hotkeys
-- **Tag filtering** — Organize with #tags and filter instantly
-- **HTML paste conversion** — Copy from web, auto-converts to Markdown
-- **Smart indentation** — Perfect for code snippets and nested lists
-- **Syntax highlighting** — Code blocks with language-specific highlighting
-- **Sticky scroll context** — Always see which heading section you're in
-- **Multi-window support** — Open notes in multiple windows
-- **Fully offline** — Works completely without internet connection
-- 🚀 **GitHub Gist integration** — Publish notes as public/private Gists with one click (requires internet)
+**Built for speed**
 
-## Export Anywhere
+- Instant startup - no loading screens
+- Lightning-fast search across all notes
+- Smart shortcuts save keystrokes
+- Multiple windows for parallel work
 
-- 📤 **PDF export** — One-click beautiful documents
-- 📤 **ZIP archive** — Bulk export all notes + attachments
-- 📤 Pure markdown — Works with any editor, forever
+**Professional features**
 
-> No subscriptions. No cloud dependency. Just fast, reliable note-taking.
+- Monaco Editor (VS Code's editor)
+- GitHub sync for backup
+- PDF export with perfect formatting
+- Publish to GitHub Gists instantly
 
-## Why I Built This
+## Key Features
 
-I’ve been a fan of note-taking with **Notion** since the day it launched—I even paid for the subscription. But one day, I decided to cut down on my recurring expenses, and Notion was one of the first to go. That’s when I realized: getting out wasn’t easy.
+### Writing
 
-I tried **Obsidian**. It looked great at first, but over time I found it too distracting and bloated with features I didn’t need. All I really wanted was a **simple notepad** to write things _down—fast_.
+- **Smart typing** - Auto-continues lists and checkboxes
+- **Wiki links** - Connect notes with `[[Note Name]]`
+- **Quick dates** - Type `@today` for timestamps
+- **Emoji picker** - Type `::` for quick emoji
+- **Typewriter mode** - Keep cursor centered while writing
 
-Most of the time, I took quick notes using Markdown in **VSCode** before eventually copying them into Notion. Markdown was faster to type, entirely keyboard-driven, and easy to read with the right extensions. VSCode made it simple and efficient.
+### Organization
 
-That’s why I started building **DumbNote**:
+- **Tags** - Organize with YAML frontmatter
+- **Favorites** - Quick access to important notes
+- **Hub View** - See how notes connect
+- **Full-text search** - Find anything instantly
 
-- Clean, VSCode-style Markdown rendering
-- Easy sharing/publishing via GitHub Gists (a feature inspired by Notion)
-- All notes are saved as plain `.md` files on my local machine—no lock-in (_menu: File -> Goto Note Folder_)
-- Markdown is becoming a universal writing format, especially with AI tools
-- I can back up everything to my NAS, external drive, or Google Drive—**no strings attached**
+### Sharing
+
+- **GitHub Gist** - Publish with one click
+- **PDF export** - Professional documents
+- **GitHub sync** - Automatic backup
+- **Bulk export** - ZIP all notes
+
+## Getting Started
+
+1. **Download and install** DumbNote for your platform
+2. **Create your first note** with `Cmd/Ctrl+N`
+3. **Start typing** - it's just markdown
+4. **Explore features** in our [User Guide](user-guide/index.md)
+
+## Learn More
+
+📚 **[Complete User Guide](user-guide/index.md)** - Master all features  
+⌨️ **[Keyboard Shortcuts](user-guide/keyboard-shortcuts.md)** - Work faster  
+🏷️ **[Organization Tips](user-guide/tags-favorites-hub.md)** - Stay organized  
+☁️ **[GitHub Sync Setup](user-guide/github-sync.md)** - Never lose a note
+
+## Philosophy
+
+DumbNote follows one principle: **let you write**.
+
+- No account required
+- No feature bloat
+- No artificial limits
+- No data harvesting
+- Just fast, reliable notes
+
+Your notes stay on your machine, in standard markdown format, forever accessible.
+
+**Repository**: https://github.com/baibao577/dumbnote-page
 
 ---
 
-Github: https://github.com/baibao577/dumbnote-page
+_Created by someone who just wanted to take notes without the hassle._
