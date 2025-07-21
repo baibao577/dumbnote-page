@@ -198,7 +198,7 @@ ul {
   border-radius: 4px;
   padding: 10px 15px;
   margin: 8px 0;
-  font-family: 'Monaco', 'Menlo', 'Consolas', monospace;
+  font-family: "Monaco", "Menlo", "Consolas", monospace;
   font-size: 0.85rem;
   color: #333;
   user-select: all;
@@ -216,16 +216,16 @@ ul {
   .troubleshooting {
     margin-top: 20px;
   }
-  
+
   .troubleshooting-details summary {
     font-size: 0.85rem;
     padding: 10px 15px;
   }
-  
+
   .troubleshooting-content {
     padding: 15px;
   }
-  
+
   .command-block {
     font-size: 0.75rem;
     padding: 8px 12px;
@@ -422,6 +422,203 @@ b {
 
   .feature-column h3 {
     font-size: 1.3rem;
+  }
+}
+
+/* Mindmap Section */
+.mindmap-section {
+  width: 100%;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(34, 197, 94, 0.08) 0%,
+    rgba(16, 185, 129, 0.05) 100%
+  );
+  margin: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.mindmap-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(34, 197, 94, 0.06) 0%,
+    transparent 40%
+  );
+  z-index: 0;
+}
+
+.mindmap-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.mindmap-title {
+  font-family: "Oswald", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.mindmap-subtitle {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mindmap-subtitle strong {
+  color: #10b981;
+}
+
+.mindmap-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.mindmap-screenshot {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.mindmap-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.mindmap-content {
+  padding: 0 20px;
+}
+
+.mindmap-content p {
+  font-size: 1.1rem;
+  color: #666;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+.mindmap-features {
+  margin-bottom: 40px;
+}
+
+.mindmap-features h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.mindmap-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.mindmap-features li {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.mindmap-features li::before {
+  content: "→";
+  color: #10b981;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.mindmap-features li strong {
+  color: #10b981;
+}
+
+.mindmap-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: #10b981;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+}
+
+.mindmap-btn:hover {
+  background: #059669;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+
+@media (max-width: 768px) {
+  .mindmap-section {
+    padding: 60px 15px;
+    margin: 60px 0;
+  }
+
+  .mindmap-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .mindmap-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .mindmap-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .mindmap-content {
+    padding: 0;
+    text-align: left;
+  }
+
+  .mindmap-content p {
+    font-size: 1rem;
+  }
+
+  .mindmap-features h3 {
+    font-size: 1.1rem;
+  }
+
+  .mindmap-features li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .mindmap-btn {
+    font-size: 1rem;
+    padding: 12px 30px;
+    display: block;
+    text-align: center;
   }
 }
 
