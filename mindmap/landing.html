@@ -1,0 +1,1144 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>
+      Free Offline Mind Mapping Tool - Visual Thinking & Note Taking | Dumbnote
+      Mindmap
+    </title>
+    <meta
+      name="title"
+      content="Free Offline Mind Mapping Tool - Visual Thinking & Note Taking | Dumbnote Mindmap"
+    />
+    <meta
+      name="description"
+      content="Create visual mind maps offline with Dumbnote Mindmap. No login required. Export to Markdown. Keyboard-driven interface for fast brainstorming and project planning. Download once, use forever."
+    />
+    <meta
+      name="keywords"
+      content="mind mapping, visual thinking, offline mindmap, markdown export, productivity tool, brainstorming software, mind map maker, visual note taking, project planning tool, knowledge management, free mind map, offline productivity, visual organization, idea mapping, concept mapping"
+    />
+    <meta name="author" content="Dumbnote" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <link rel="canonical" href="https://dumbnote.app/mindmap/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://dumbnote.app/mindmap/" />
+    <meta
+      property="og:title"
+      content="Free Offline Mind Mapping Tool - Visual Thinking & Note Taking | Dumbnote Mindmap"
+    />
+    <meta
+      property="og:description"
+      content="Create visual mind maps offline with Dumbnote Mindmap. No login required. Export to Markdown. Download once, use forever."
+    />
+    <meta
+      property="og:image"
+      content="https://dumbnote.app/assets/images/dumbnote-mindmap-screenshot.png"
+    />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://dumbnote.app/mindmap/" />
+    <meta
+      property="twitter:title"
+      content="Free Offline Mind Mapping Tool - Visual Thinking & Note Taking | Dumbnote Mindmap"
+    />
+    <meta
+      property="twitter:description"
+      content="Create visual mind maps offline with Dumbnote Mindmap. No login required. Export to Markdown. Download once, use forever."
+    />
+    <meta
+      property="twitter:image"
+      content="https://dumbnote.app/assets/images/dumbnote-mindmap-screenshot.png"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="./favicon.png" />
+
+    <!-- Google Search Console Verification -->
+    <meta
+      name="google-site-verification"
+      content="w-q1C0_urJSBD7HNJvhUfzWRxzV25vnBFEYJ6PW2iLM"
+    />
+    <meta
+      name="google-site-verification"
+      content="QMdOVOUIFjdCz_CgTbvXa0iQb6-JRYZo1ovJ-d8pwRg"
+    />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Dumbnote Mindmap",
+        "applicationCategory": "ProductivityApplication",
+        "operatingSystem": "Web Browser",
+        "description": "Free offline mind mapping tool for visual thinking and note-taking. Create, organize, and export mind maps to Markdown.",
+        "url": "https://dumbnote.app/mindmap",
+        "author": {
+          "@type": "Organization",
+          "name": "Dumbnote"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.8",
+          "ratingCount": "156"
+        },
+        "featureList": [
+          "Offline-first functionality",
+          "Visual mind mapping",
+          "Markdown export",
+          "Keyboard navigation",
+          "SVG export",
+          "Drag and drop interface",
+          "Multiple node types",
+          "No login required",
+          "Privacy-focused"
+        ],
+        "screenshot": "https://dumbnote.app/assets/images/dumbnote-mindmap-screenshot.png"
+      }
+    </script>
+
+    <style>
+      /* Reset and Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Red Hat Display", sans-serif;
+        color: #333;
+        line-height: 1.6;
+        background-color: #f9f9f9;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Red Hat Display", sans-serif;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: 1rem;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      /* Header */
+      header {
+        background-color: #fff;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem 0;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #333;
+        font-weight: 700;
+        font-size: 1rem;
+      }
+
+      .logo img {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: #666;
+        transition: color 0.3s;
+        font-size: 15px;
+      }
+
+      .nav-links a:hover {
+        color: #10b981;
+      }
+
+      /* Hero Section */
+      .hero {
+        padding: 120px 0 80px;
+        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        text-align: center;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        color: #166534;
+        margin-bottom: 1.5rem;
+      }
+
+      .hero .subtitle {
+        font-size: 1.25rem;
+        color: #666;
+        max-width: 800px;
+        margin: 0 auto 2rem;
+        line-height: 1.8;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 3rem;
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 1rem 2rem;
+        text-decoration: none;
+        border-radius: 30px;
+        font-weight: 600;
+        transition: all 0.3s;
+        font-size: 1.1rem;
+      }
+
+      .btn-primary {
+        background-color: #10b981;
+        color: white;
+        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+      }
+
+      .btn-primary:hover {
+        background-color: #059669;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+      }
+
+      .btn-secondary {
+        background-color: white;
+        color: #10b981;
+        border: 2px solid #10b981;
+      }
+
+      .btn-secondary:hover {
+        background-color: #f0fdf4;
+        transform: translateY(-2px);
+      }
+
+      .hero-image {
+        max-width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Value Props Section */
+      .value-props {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .value-props h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .props-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem 3rem;
+        margin-bottom: 3rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .prop-card {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        padding: 1.5rem;
+      }
+
+      .prop-icon {
+        width: 60px;
+        height: 60px;
+        flex-shrink: 0;
+        background-color: #f0fdf4;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .prop-icon .material-icons {
+        font-size: 2rem;
+        color: #10b981;
+      }
+      
+      .prop-content {
+        flex: 1;
+      }
+
+      .prop-card h3 {
+        color: #166534;
+        margin-bottom: 0.5rem;
+        font-size: 1.25rem;
+      }
+
+      .prop-card p {
+        color: #666;
+        line-height: 1.8;
+        margin: 0;
+      }
+
+      /* Features Section */
+      .features {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+      }
+
+      .features h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .feature-item {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .feature-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .feature-item h3 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+      }
+
+      .feature-item p {
+        color: #666;
+      }
+
+      /* Use Cases Section */
+      .use-cases {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .use-cases h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .use-cases-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+
+      .use-case {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+      }
+
+      .use-case-icon {
+        flex-shrink: 0;
+      }
+
+      .use-case-icon .material-icons {
+        color: #10b981;
+        font-size: 1.5rem;
+      }
+
+      .use-case h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .use-case p {
+        color: #666;
+        font-size: 0.95rem;
+      }
+
+      /* How It Works Section */
+      .how-it-works {
+        padding: 80px 0;
+        background-color: #f0fdf4;
+      }
+
+      .how-it-works h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 3rem;
+        max-width: 900px;
+        margin: 0 auto;
+      }
+
+      .step {
+        text-align: center;
+      }
+
+      .step-number {
+        width: 60px;
+        height: 60px;
+        background-color: #10b981;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 0 auto 1rem;
+      }
+
+      .step h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .step p {
+        color: #666;
+      }
+
+      /* Comparison Section */
+      .comparison {
+        padding: 80px 0;
+        background-color: white;
+      }
+
+      .comparison h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .comparison-table {
+        max-width: 800px;
+        margin: 0 auto;
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        background-color: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      th,
+      td {
+        padding: 1rem;
+        text-align: left;
+        border-bottom: 1px solid #e5e7eb;
+      }
+
+      th {
+        background-color: #f9f9f9;
+        font-weight: 600;
+        color: #166534;
+      }
+
+      .check {
+        color: #10b981;
+        font-size: 1.2rem;
+      }
+
+      .cross {
+        color: #ef4444;
+        font-size: 1.2rem;
+      }
+
+      /* FAQ Section */
+      .faq {
+        padding: 80px 0;
+        background-color: #f9f9f9;
+      }
+
+      .faq h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 3rem;
+      }
+
+      .faq-list {
+        max-width: 800px;
+        margin: 0 auto;
+      }
+
+      .faq-item {
+        background-color: white;
+        margin-bottom: 1rem;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      }
+
+      .faq-question {
+        padding: 1.5rem;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 600;
+        transition: background-color 0.3s;
+      }
+
+      .faq-question:hover {
+        background-color: #f0fdf4;
+      }
+
+      .faq-answer {
+        padding: 0 1.5rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s, padding 0.3s;
+      }
+
+      .faq-item.active .faq-answer {
+        max-height: 300px;
+        padding: 0 1.5rem 1.5rem;
+      }
+
+      .faq-toggle {
+        transition: transform 0.3s;
+      }
+
+      .faq-toggle .material-icons {
+        font-size: 1.5rem;
+        color: #10b981;
+      }
+
+      .faq-item.active .faq-toggle {
+        transform: rotate(180deg);
+      }
+
+      /* CTA Section */
+      .cta {
+        padding: 80px 0;
+        background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+        text-align: center;
+        color: white;
+      }
+
+      .cta h2 {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .cta p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        opacity: 0.9;
+      }
+
+      .cta .btn {
+        background-color: white;
+        color: #10b981;
+        font-size: 1.2rem;
+        padding: 1rem 3rem;
+      }
+
+      .cta .btn:hover {
+        background-color: #f0fdf4;
+      }
+
+      /* Footer */
+      footer {
+        background-color: #333;
+        color: white;
+        padding: 40px 0;
+        text-align: center;
+      }
+
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+      }
+
+      .footer-links a {
+        color: white;
+        text-decoration: none;
+        opacity: 0.8;
+        transition: opacity 0.3s;
+      }
+
+      .footer-links a:hover {
+        opacity: 1;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 2rem;
+        }
+
+        .hero .subtitle {
+          font-size: 1.1rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .nav-links {
+          display: none;
+        }
+
+        .props-grid {
+          grid-template-columns: 1fr;
+          gap: 1.5rem;
+        }
+
+        .comparison-table {
+          font-size: 0.9rem;
+        }
+
+        th,
+        td {
+          padding: 0.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <nav class="container">
+        <a href="/" class="logo">
+          <img src="./favicon.png" alt="Dumbnote Mindmap Logo" />
+          Dumbnote Mindmap
+        </a>
+        <ul class="nav-links">
+          <li><a href="https://dumbnote.app">Dumbnote App</a></li>
+          <li><a href="https://dumbnote.app/mindmap">Try Mindmap</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Offline-First Visual Mind Mapping, Built to Last</h1>
+        <p class="subtitle">
+          Tame scattered thoughts. Capture ideas visually. Work offline — and
+          export everything to Markdown so your thinking keeps flowing.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://dumbnote.app/mindmap" class="btn btn-primary"
+            >Try Mindmap Now</a
+          >
+          <a href="./index.html" download="dumbnote-mindmap.html" class="btn btn-secondary"
+            >Download HTML File</a
+          >
+        </div>
+        <img
+          src="../assets/images/dumbnote-mindmap-screenshot.png"
+          alt="Dumbnote Mindmap in action - visual mind mapping interface"
+          class="hero-image"
+        />
+      </div>
+    </section>
+
+    <!-- Value Props Section -->
+    <section class="value-props">
+      <div class="container">
+        <h2>Why Dumbnote Mindmap?</h2>
+        <p
+          style="
+            text-align: center;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+          "
+        >
+          You reach for a mindmap when things feel scattered — ideas,
+          references, half-formed notes. You need clarity, not clutter.
+        </p>
+        <div class="props-grid">
+          <div class="prop-card">
+            <div class="prop-icon">
+              <span class="material-icons">lock</span>
+            </div>
+            <div class="prop-content">
+              <h3>Truly Offline</h3>
+              <p>
+                No cloud. No login. Just download the HTML file and open it in
+                your browser. Your ideas stay private.
+              </p>
+            </div>
+          </div>
+          <div class="prop-card">
+            <div class="prop-icon">
+              <span class="material-icons">description</span>
+            </div>
+            <div class="prop-content">
+              <h3>Markdown Export</h3>
+              <p>
+                Export to clean, structured Markdown that preserves your
+                hierarchy. Perfect for docs, blogs, or notebooks.
+              </p>
+            </div>
+          </div>
+          <div class="prop-card">
+            <div class="prop-icon">
+              <span class="material-icons">bolt</span>
+            </div>
+            <div class="prop-content">
+              <h3>Keyboard-Driven</h3>
+              <p>
+                Navigate and create with keyboard shortcuts. Stay in flow state
+                without reaching for the mouse.
+              </p>
+            </div>
+          </div>
+          <div class="prop-card">
+            <div class="prop-icon">
+              <span class="material-icons">all_inclusive</span>
+            </div>
+            <div class="prop-content">
+              <h3>Forever Yours</h3>
+              <p>
+                No subscriptions. No vendor lock-in. One HTML file that works
+                today and will work in 10 years.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+      <div class="container">
+        <h2>Features at a Glance</h2>
+        <div class="features-grid">
+          <div class="feature-item">
+            <h3>Visual Mind Mapping</h3>
+            <p>
+              Drag, drop, and navigate with an intuitive interface. Create tree
+              structures that mirror how you think.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Inline Descriptions</h3>
+            <p>
+              Add hidden notes to each node. Keep your map clean while storing
+              detailed information.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Smart Layout</h3>
+            <p>
+              Grid-based positioning with balanced East/West branches. Your maps
+              stay organized automatically.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Color-Coded Nodes</h3>
+            <p>
+              Different types for ideas, tasks, notes, questions. Visual
+              hierarchy at a glance.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Export Options</h3>
+            <p>
+              Export to Markdown for writing or SVG for presentations. Your work
+              flows seamlessly.
+            </p>
+          </div>
+          <div class="feature-item">
+            <h3>Focus Mode</h3>
+            <p>
+              Zoom and center on what matters. Navigate large maps without
+              losing context.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases">
+      <div class="container">
+        <h2>Perfect For</h2>
+        <div class="use-cases-list">
+          <div class="use-case">
+            <span class="use-case-icon"
+              ><span class="material-icons">analytics</span></span
+            >
+            <div>
+              <h3>Planning Complex Projects</h3>
+              <p>
+                Break down large projects into manageable pieces. See
+                dependencies and relationships clearly.
+              </p>
+            </div>
+          </div>
+          <div class="use-case">
+            <span class="use-case-icon"
+              ><span class="material-icons">search</span></span
+            >
+            <div>
+              <h3>Gathering Research</h3>
+              <p>
+                Organize scattered findings, quotes, and references. Build
+                connections between ideas.
+              </p>
+            </div>
+          </div>
+          <div class="use-case">
+            <span class="use-case-icon"
+              ><span class="material-icons">edit</span></span
+            >
+            <div>
+              <h3>Structuring Content</h3>
+              <p>
+                Outline articles, books, or presentations. Export to Markdown
+                when ready to write.
+              </p>
+            </div>
+          </div>
+          <div class="use-case">
+            <span class="use-case-icon"
+              ><span class="material-icons">psychology</span></span
+            >
+            <div>
+              <h3>Personal Knowledge</h3>
+              <p>
+                Map your learning journey. Connect concepts across domains and
+                disciplines.
+              </p>
+            </div>
+          </div>
+          <div class="use-case">
+            <span class="use-case-icon"
+              ><span class="material-icons">architecture</span></span
+            >
+            <div>
+              <h3>System Architecture</h3>
+              <p>
+                Visualize technical systems, workflows, or organizational
+                structures.
+              </p>
+            </div>
+          </div>
+          <div class="use-case">
+            <span class="use-case-icon"
+              ><span class="material-icons">lightbulb</span></span
+            >
+            <div>
+              <h3>Brainstorming Sessions</h3>
+              <p>
+                Capture ideas as they flow. Reorganize and refine without losing
+                momentum.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Open in Browser</h3>
+            <p>
+              No installation needed. Just open the HTML file in any modern
+              browser and start mapping.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Build Your Map</h3>
+            <p>
+              Use keyboard shortcuts or mouse to add nodes. Drag to reorganize.
+              Add descriptions for details.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Export & Continue</h3>
+            <p>
+              Export to Markdown or SVG when done. Your ideas flow seamlessly
+              into your next tool.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section class="comparison">
+      <div class="container">
+        <h2>Why Choose Offline?</h2>
+        <div class="comparison-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Dumbnote Mindmap</th>
+                <th>Cloud Alternatives</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Works Offline</td>
+                <td><span class="check">✓</span> Always</td>
+                <td><span class="cross">✗</span> Requires Internet</td>
+              </tr>
+              <tr>
+                <td>Data Privacy</td>
+                <td><span class="check">✓</span> 100% Local</td>
+                <td><span class="cross">✗</span> Stored on Servers</td>
+              </tr>
+              <tr>
+                <td>Cost</td>
+                <td><span class="check">✓</span> Free Forever</td>
+                <td><span class="cross">✗</span> Subscription Required</td>
+              </tr>
+              <tr>
+                <td>Future Proof</td>
+                <td><span class="check">✓</span> HTML Standard</td>
+                <td><span class="cross">✗</span> Service Dependent</td>
+              </tr>
+              <tr>
+                <td>Export Options</td>
+                <td><span class="check">✓</span> MD, SVG</td>
+                <td>Varies</td>
+              </tr>
+              <tr>
+                <td>Speed</td>
+                <td><span class="check">✓</span> Instant</td>
+                <td>Network Dependent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-list">
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How does offline mode work exactly?</span>
+              <span class="faq-toggle"
+                ><span class="material-icons">expand_more</span></span
+              >
+            </div>
+            <div class="faq-answer">
+              <p>
+                Dumbnote Mindmap is a single HTML file with all code embedded.
+                Once downloaded, it runs entirely in your browser without any
+                server connection. Your data is stored in browser IndexedDB,
+                staying completely private on your device.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What browsers are supported?</span>
+              <span class="faq-toggle"
+                ><span class="material-icons">expand_more</span></span
+              >
+            </div>
+            <div class="faq-answer">
+              <p>
+                Any modern browser works: Chrome, Firefox, Safari, Edge, and
+                Brave. The app uses standard web technologies that have been
+                supported for years, ensuring compatibility.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>How do I save my work?</span>
+              <span class="faq-toggle"
+                ><span class="material-icons">expand_more</span></span
+              >
+            </div>
+            <div class="faq-answer">
+              <p>
+                Your mindmap auto-saves to browser IndexedDB as you work. To
+                create backups or share, use the Export feature to save as
+                Markdown or SVG files.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>What's the file size limit?</span>
+              <span class="faq-toggle"
+                ><span class="material-icons">expand_more</span></span
+              >
+            </div>
+            <div class="faq-answer">
+              <p>
+                There's no hard limit, but browser IndexedDB typically allows
+                much more storage than localStorage. That's enough for thousands
+                of nodes with descriptions. For very large maps, regular exports
+                are recommended.
+              </p>
+            </div>
+          </div>
+          <div class="faq-item">
+            <div class="faq-question">
+              <span>Can I customize the appearance?</span>
+              <span class="faq-toggle"
+                ><span class="material-icons">expand_more</span></span
+              >
+            </div>
+            <div class="faq-answer">
+              <p>
+                Node types come with predefined colors to help you organize your
+                thoughts visually.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+      <div class="container">
+        <h2>Start Mapping Your Ideas</h2>
+        <p>No signup. No cloud. Just pure, focused thinking.</p>
+        <a href="https://dumbnote.app/mindmap" class="btn"
+          >Launch Mindmap Tool</a
+        >
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-links">
+          <a href="https://dumbnote.app">Dumbnote App</a>
+          <a href="https://dumbnote.app/mindmap">Mindmap Tool</a>
+          <a href="https://github.com/baibao577/dumbnote-page" target="_blank"
+            >GitHub</a
+          >
+        </div>
+        <p>&copy; 2025 Dumbnote. Built with care for thinkers everywhere.</p>
+      </div>
+    </footer>
+
+    <script>
+      // FAQ Toggle
+      document.querySelectorAll(".faq-question").forEach((question) => {
+        question.addEventListener("click", () => {
+          const item = question.parentElement;
+          item.classList.toggle("active");
+        });
+      });
+
+      // Smooth Scrolling with offset for fixed header
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute("href");
+          const target = document.querySelector(targetId);
+          if (target) {
+            const headerOffset = 80; // Height of fixed header
+            const elementPosition = target.getBoundingClientRect().top;
+            const offsetPosition =
+              elementPosition + window.pageYOffset - headerOffset;
+
+            window.scrollTo({
+              top: offsetPosition,
+              behavior: "smooth",
+            });
+          }
+        });
+      });
+
+      // Track Download
+      document.querySelector(".btn-secondary").addEventListener("click", () => {
+        if (typeof gtag !== "undefined") {
+          gtag("event", "download", {
+            event_category: "mindmap",
+            event_label: "html_file",
+          });
+        }
+      });
+    </script>
+  </body>
+</html>

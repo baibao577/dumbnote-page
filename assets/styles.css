@@ -575,6 +575,26 @@ b {
   box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
 }
 
+.mindmap-btn-secondary {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  color: #10b981;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  border: 2px solid #10b981;
+  margin-right: 10px;
+}
+
+.mindmap-btn-secondary:hover {
+  background: #f0fdf4;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.2);
+}
+
 @media (max-width: 768px) {
   .mindmap-section {
     padding: 60px 15px;
