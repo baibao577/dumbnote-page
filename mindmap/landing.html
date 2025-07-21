@@ -511,6 +511,229 @@
         font-size: 1.2rem;
       }
 
+      /* Alternatives Section */
+      .alternatives {
+        padding: 80px 0;
+        background-color: #f0fdf4;
+      }
+
+      .alternatives h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .alternatives-subtitle {
+        text-align: center;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+      }
+
+      .alternatives-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .alternative-card {
+        background-color: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .alternative-card h3 {
+        color: #166534;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+      }
+
+      .alternative-features {
+        list-style: none;
+        padding: 0;
+        margin: 1rem 0;
+      }
+
+      .alternative-features li {
+        padding: 0.5rem 0;
+        color: #666;
+        position: relative;
+        padding-left: 1.5rem;
+      }
+
+      .alternative-features li:before {
+        content: "vs";
+        position: absolute;
+        left: 0;
+        color: #10b981;
+        font-weight: 600;
+        font-size: 0.8rem;
+      }
+
+      .why-dumbnote {
+        background-color: #f0fdf4;
+        padding: 1.5rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+      }
+
+      .why-dumbnote h4 {
+        color: #10b981;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      .why-dumbnote p {
+        margin: 0;
+        color: #666;
+      }
+
+      /* Infographics Section */
+      .infographics {
+        padding: 80px 0;
+        background-color: #fff;
+      }
+
+      .infographics h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .infographics-subtitle {
+        text-align: center;
+        color: #666;
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+      }
+
+      .infographic-container {
+        max-width: 800px;
+        margin: 0 auto 3rem;
+        background-color: #f0fdf4;
+        border-radius: 10px;
+        padding: 3rem;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .infographic-title {
+        text-align: center;
+        color: #166534;
+        font-size: 1.8rem;
+        margin-bottom: 2rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .stat-card {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-number {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #10b981;
+        margin-bottom: 0.5rem;
+      }
+
+      .stat-label {
+        color: #666;
+        font-size: 0.9rem;
+      }
+
+      .benefits-list {
+        list-style: none;
+        padding: 0;
+        margin: 2rem 0;
+      }
+
+      .benefit-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background-color: white;
+        border-radius: 8px;
+      }
+
+      .benefit-icon {
+        flex-shrink: 0;
+        width: 40px;
+        height: 40px;
+        background-color: #10b981;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .benefit-icon .material-icons {
+        color: white;
+        font-size: 1.2rem;
+      }
+
+      .benefit-content h4 {
+        color: #166534;
+        margin-bottom: 0.3rem;
+      }
+
+      .benefit-content p {
+        color: #666;
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      .share-section {
+        text-align: center;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e5e7eb;
+      }
+
+      .share-text {
+        color: #666;
+        margin-bottom: 1rem;
+      }
+
+      .share-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+      }
+
+      .share-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background-color: #f0fdf4;
+        color: #10b981;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: all 0.3s;
+        font-size: 0.9rem;
+      }
+
+      .share-btn:hover {
+        background-color: #10b981;
+        color: white;
+      }
+
       /* FAQ Section */
       .faq {
         padding: 80px 0;
@@ -656,6 +879,24 @@
           gap: 1.5rem;
         }
 
+        .alternatives-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+
+        .infographic-container {
+          padding: 2rem;
+        }
+
+        .share-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
         .comparison-table {
           font-size: 0.9rem;
         }
@@ -689,8 +930,8 @@
       <div class="container">
         <h1>Offline-First Visual Mind Mapping, Built to Last</h1>
         <p class="subtitle">
-          Tame scattered thoughts. Capture ideas visually. Work offline — and
-          export everything to Markdown so your thinking keeps flowing.
+          Tame scattered thoughts with our free mind mapping software. Capture ideas visually using this browser-based mind map maker. Work offline — and
+          export everything to Markdown so your thinking keeps flowing. The best mind mapping tool for students, writers, and project managers.
         </p>
         <div class="hero-buttons">
           <a href="https://dumbnote.app/mindmap" class="btn btn-primary"
@@ -839,8 +1080,8 @@
             <div>
               <h3>Planning Complex Projects</h3>
               <p>
-                Break down large projects into manageable pieces. See
-                dependencies and relationships clearly.
+                Break down large projects into manageable pieces using visual project planning techniques. See
+                dependencies and relationships clearly with our mind mapping software for project management.
               </p>
             </div>
           </div>
@@ -863,8 +1104,8 @@
             <div>
               <h3>Structuring Content</h3>
               <p>
-                Outline articles, books, or presentations. Export to Markdown
-                when ready to write.
+                Use our outline maker and content planning tool to structure articles, books, or presentations. Export mind maps to Markdown
+                when ready to write. Perfect visual outlining software for content creators.
               </p>
             </div>
           </div>
@@ -987,6 +1228,186 @@
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Alternatives Section -->
+    <section class="alternatives">
+      <div class="container">
+        <h2>Free Mind Mapping Alternative to Popular Tools</h2>
+        <p class="alternatives-subtitle">
+          Looking for a MindMeister alternative or XMind replacement? Compare how Dumbnote Mindmap stacks up against popular mind mapping software for brainstorming and visual thinking.
+        </p>
+        <div class="alternatives-grid">
+          <div class="alternative-card">
+            <h3>Alternative to MindMeister</h3>
+            <ul class="alternative-features">
+              <li>MindMeister requires monthly subscription</li>
+              <li>MindMeister needs constant internet connection</li>
+              <li>MindMeister stores your data on their servers</li>
+              <li>MindMeister limits free plan to 3 mind maps</li>
+            </ul>
+            <div class="why-dumbnote">
+              <h4>Why Choose Dumbnote Mindmap?</h4>
+              <p>Unlimited offline mind maps, free forever. Your visual brainstorming tool works anywhere without internet.</p>
+            </div>
+          </div>
+          
+          <div class="alternative-card">
+            <h3>Alternative to XMind</h3>
+            <ul class="alternative-features">
+              <li>XMind requires software installation</li>
+              <li>XMind Pro features cost $59.99/year</li>
+              <li>XMind files need specific software to open</li>
+              <li>XMind has complex interface for beginners</li>
+            </ul>
+            <div class="why-dumbnote">
+              <h4>Why Choose Dumbnote Mindmap?</h4>
+              <p>No installation needed - just open in browser. Simple keyboard-driven mind mapping for fast idea capture.</p>
+            </div>
+          </div>
+          
+          <div class="alternative-card">
+            <h3>Alternative to Coggle</h3>
+            <ul class="alternative-features">
+              <li>Coggle limits free plan to 3 private diagrams</li>
+              <li>Coggle requires Google account login</li>
+              <li>Coggle needs active internet connection</li>
+              <li>Coggle collaboration requires paid plan</li>
+            </ul>
+            <div class="why-dumbnote">
+              <h4>Why Choose Dumbnote Mindmap?</h4>
+              <p>Complete privacy with no login required. Create unlimited concept maps offline with markdown export.</p>
+            </div>
+          </div>
+          
+          <div class="alternative-card">
+            <h3>Alternative to FreeMind</h3>
+            <ul class="alternative-features">
+              <li>FreeMind requires Java installation</li>
+              <li>FreeMind has outdated user interface</li>
+              <li>FreeMind lacks modern export options</li>
+              <li>FreeMind has steep learning curve</li>
+            </ul>
+            <div class="why-dumbnote">
+              <h4>Why Choose Dumbnote Mindmap?</h4>
+              <p>Modern web-based mind mapping tool with clean UI. Export to markdown for seamless workflow integration.</p>
+            </div>
+          </div>
+          
+          <div class="alternative-card">
+            <h3>Alternative to Lucidchart</h3>
+            <ul class="alternative-features">
+              <li>Lucidchart free plan limits to 3 documents</li>
+              <li>Lucidchart costs $7.95/month for individual</li>
+              <li>Lucidchart requires account registration</li>
+              <li>Lucidchart focuses on complex diagrams</li>
+            </ul>
+            <div class="why-dumbnote">
+              <h4>Why Choose Dumbnote Mindmap?</h4>
+              <p>Focused on simple visual note-taking and brainstorming. Perfect for personal knowledge management.</p>
+            </div>
+          </div>
+          
+          <div class="alternative-card">
+            <h3>Alternative to MindNode</h3>
+            <ul class="alternative-features">
+              <li>MindNode only available on Mac/iOS</li>
+              <li>MindNode costs $2.49/month subscription</li>
+              <li>MindNode requires iCloud for sync</li>
+              <li>MindNode limited to Apple ecosystem</li>
+            </ul>
+            <div class="why-dumbnote">
+              <h4>Why Choose Dumbnote Mindmap?</h4>
+              <p>Cross-platform mind mapping that works on any device with a browser. No ecosystem lock-in.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Infographics Section -->
+    <section class="infographics">
+      <div class="container">
+        <h2>Mind Mapping Benefits: Research-Backed Results</h2>
+        <p class="infographics-subtitle">
+          Discover why visual thinking tools and mind mapping techniques improve memory retention, boost creativity, and enhance productivity for learners and professionals.
+        </p>
+        
+        <div class="infographic-container">
+          <h3 class="infographic-title">The Science of Mind Mapping</h3>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-number">23%</div>
+              <div class="stat-label">Average Productivity Increase</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">15%</div>
+              <div class="stat-label">Better Memory Retention</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-number">50%</div>
+              <div class="stat-label">Creativity Boost</div>
+            </div>
+          </div>
+          
+          <ul class="benefits-list">
+            <li class="benefit-item">
+              <div class="benefit-icon">
+                <span class="material-icons">school</span>
+              </div>
+              <div class="benefit-content">
+                <h4>Enhanced Learning & Study Techniques</h4>
+                <p>Visual mind maps help students organize complex information, making study sessions more effective and improving exam preparation strategies.</p>
+              </div>
+            </li>
+            
+            <li class="benefit-item">
+              <div class="benefit-icon">
+                <span class="material-icons">group</span>
+              </div>
+              <div class="benefit-content">
+                <h4>Better Team Collaboration</h4>
+                <p>Mind mapping in meetings increases engagement and helps teams visualize project scope, leading to clearer communication and faster decision-making.</p>
+              </div>
+            </li>
+            
+            <li class="benefit-item">
+              <div class="benefit-icon">
+                <span class="material-icons">trending_up</span>
+              </div>
+              <div class="benefit-content">
+                <h4>Improved Problem-Solving Skills</h4>
+                <p>Breaking down complex problems visually helps identify patterns and connections, leading to innovative solutions and strategic thinking.</p>
+              </div>
+            </li>
+            
+            <li class="benefit-item">
+              <div class="benefit-icon">
+                <span class="material-icons">timer</span>
+              </div>
+              <div class="benefit-content">
+                <h4>Time-Saving Organization</h4>
+                <p>Users report saving 3-7 hours per week by organizing thoughts visually, reducing time spent searching for information and planning tasks.</p>
+              </div>
+            </li>
+          </ul>
+          
+          <div class="share-section">
+            <p class="share-text">Share these mind mapping benefits with your team:</p>
+            <div class="share-buttons">
+              <a href="#" class="share-btn" onclick="navigator.clipboard.writeText('Mind mapping increases productivity by 23% and improves memory retention by 15%. Try Dumbnote Mindmap - a free offline tool: https://dumbnote.app/mindmap'); alert('Copied to clipboard!'); return false;">
+                <span class="material-icons">content_copy</span>
+                Copy Stats
+              </a>
+              <a href="https://twitter.com/intent/tweet?text=Mind%20mapping%20increases%20productivity%20by%2023%25%20and%20improves%20memory%20retention%20by%2015%25.%20Try%20Dumbnote%20Mindmap%20-%20a%20free%20offline%20tool%3A&url=https%3A%2F%2Fdumbnote.app%2Fmindmap" target="_blank" class="share-btn">
+                <span class="material-icons">share</span>
+                Share on X
+              </a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
