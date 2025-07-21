@@ -155,6 +155,61 @@
         padding: 0 20px;
       }
 
+      /* Color Options - Uncomment the set you prefer */
+
+      /* Option 1: Vibrant Emerald (Current - Enhanced) */
+      :root {
+        --primary-green: #10b981;
+        --primary-green-hover: #059669;
+        --primary-green-dark: #166534;
+        --primary-green-light-bg: #f0fdf4;
+        --primary-green-light: #dcfce7;
+        --primary-green-darkest: #065f46;
+      }
+
+      /* TEST: Try Option 2 - Bold Forest Green (Stronger) */
+      :root {
+        --primary-green: #16a34a;
+        --primary-green-hover: #15803d;
+        --primary-green-dark: #14532d;
+        --primary-green-light-bg: #d1fae5; /* Stronger light green background */
+        --primary-green-light: #a7f3d0; /* More saturated light green */
+        --primary-green-darkest: #052e16;
+      }
+
+      /* Option 2: Bold Forest Green 
+      :root {
+        --primary-green: #16a34a;
+        --primary-green-hover: #15803d;
+        --primary-green-dark: #14532d;
+        --primary-green-light-bg: #f0fdf4;
+        --primary-green-light: #dcfce7;
+        --primary-green-darkest: #052e16;
+      }
+      */
+
+      /* Option 3: Vivid Lime Green
+      :root {
+        --primary-green: #65a30d;
+        --primary-green-hover: #4d7c0f;
+        --primary-green-dark: #365314;
+        --primary-green-light-bg: #f7fee7;
+        --primary-green-light: #ecfccb;
+        --primary-green-darkest: #1a2e05;
+      }
+      */
+
+      /* Option 4: Electric Teal
+      :root {
+        --primary-green: #14b8a6;
+        --primary-green-hover: #0d9488;
+        --primary-green-dark: #134e4a;
+        --primary-green-light-bg: #f0fdfa;
+        --primary-green-light: #ccfbf1;
+        --primary-green-darkest: #042f2e;
+      }
+      */
+
       /* Header */
       header {
         background-color: #fff;
@@ -201,19 +256,64 @@
       }
 
       .nav-links a:hover {
-        color: #10b981;
+        color: var(--primary-green);
       }
 
       /* Hero Section */
       .hero {
         padding: 120px 0 80px;
-        background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+        background: radial-gradient(
+            ellipse at top left,
+            rgba(255, 255, 255, 0.3) 0%,
+            transparent 50%
+          ),
+          radial-gradient(
+            ellipse at bottom right,
+            var(--primary-green-light) 0%,
+            transparent 50%
+          ),
+          linear-gradient(
+            135deg,
+            var(--primary-green-light-bg) 0%,
+            var(--primary-green-light) 50%,
+            var(--primary-green-light-bg) 100%
+          );
         text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: -50%;
+        right: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(
+          circle,
+          rgba(255, 255, 255, 0.1) 1px,
+          transparent 1px
+        );
+        background-size: 50px 50px;
+        transform: rotate(30deg);
+        pointer-events: none;
+        animation: subtle-shift 20s ease-in-out infinite;
+      }
+
+      @keyframes subtle-shift {
+        0%,
+        100% {
+          transform: rotate(30deg) translateX(0);
+        }
+        50% {
+          transform: rotate(30deg) translateX(-30px);
+        }
       }
 
       .hero h1 {
         font-size: 3rem;
-        color: #166534;
+        color: var(--primary-green-dark);
         margin-bottom: 1.5rem;
       }
 
@@ -244,32 +344,32 @@
       }
 
       .btn-primary {
-        background-color: #10b981;
+        background-color: var(--primary-green);
         color: white;
         box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
       }
 
       .btn-primary:hover {
-        background-color: #059669;
+        background-color: var(--primary-green-hover);
         transform: translateY(-2px);
         box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
       }
 
       .btn-secondary {
         background-color: white;
-        color: #10b981;
-        border: 2px solid #10b981;
+        color: var(--primary-green);
+        border: 2px solid var(--primary-green);
       }
 
       .btn-secondary:hover {
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
         transform: translateY(-2px);
       }
 
       .hero-image {
         max-width: 100%;
         border-radius: 10px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        /*  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  */
       }
 
       /* Value Props Section */
@@ -304,7 +404,7 @@
         width: 60px;
         height: 60px;
         flex-shrink: 0;
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -313,15 +413,15 @@
 
       .prop-icon .material-icons {
         font-size: 2rem;
-        color: #10b981;
+        color: var(--primary-green);
       }
-      
+
       .prop-content {
         flex: 1;
       }
 
       .prop-card h3 {
-        color: #166534;
+        color: var(--primary-green-dark);
         margin-bottom: 0.5rem;
         font-size: 1.25rem;
       }
@@ -364,7 +464,7 @@
       }
 
       .feature-item h3 {
-        color: #10b981;
+        color: var(--primary-green);
         margin-bottom: 0.5rem;
       }
 
@@ -403,7 +503,7 @@
       }
 
       .use-case-icon .material-icons {
-        color: #10b981;
+        color: var(--primary-green);
         font-size: 1.5rem;
       }
 
@@ -420,7 +520,7 @@
       /* How It Works Section */
       .how-it-works {
         padding: 80px 0;
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
       }
 
       .how-it-works h2 {
@@ -444,7 +544,7 @@
       .step-number {
         width: 60px;
         height: 60px;
-        background-color: #10b981;
+        background-color: var(--primary-green);
         color: white;
         border-radius: 50%;
         display: flex;
@@ -498,11 +598,11 @@
       th {
         background-color: #f9f9f9;
         font-weight: 600;
-        color: #166534;
+        color: var(--primary-green-dark);
       }
 
       .check {
-        color: #10b981;
+        color: var(--primary-green);
         font-size: 1.2rem;
       }
 
@@ -514,7 +614,7 @@
       /* Alternatives Section */
       .alternatives {
         padding: 80px 0;
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
       }
 
       .alternatives h2 {
@@ -547,7 +647,7 @@
       }
 
       .alternative-card h3 {
-        color: #166534;
+        color: var(--primary-green-dark);
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
@@ -569,20 +669,20 @@
         content: "vs";
         position: absolute;
         left: 0;
-        color: #10b981;
+        color: var(--primary-green);
         font-weight: 600;
         font-size: 0.8rem;
       }
 
       .why-dumbnote {
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
         padding: 1.5rem;
         border-radius: 8px;
         margin-top: 1rem;
       }
 
       .why-dumbnote h4 {
-        color: #10b981;
+        color: var(--primary-green);
         margin-bottom: 0.5rem;
         font-size: 1.1rem;
       }
@@ -615,7 +715,7 @@
       .infographic-container {
         max-width: 800px;
         margin: 0 auto 3rem;
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
         border-radius: 10px;
         padding: 3rem;
         box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -623,7 +723,7 @@
 
       .infographic-title {
         text-align: center;
-        color: #166534;
+        color: var(--primary-green-dark);
         font-size: 1.8rem;
         margin-bottom: 2rem;
       }
@@ -646,7 +746,7 @@
       .stat-number {
         font-size: 2.5rem;
         font-weight: 700;
-        color: #10b981;
+        color: var(--primary-green);
         margin-bottom: 0.5rem;
       }
 
@@ -675,7 +775,7 @@
         flex-shrink: 0;
         width: 40px;
         height: 40px;
-        background-color: #10b981;
+        background-color: var(--primary-green);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -688,7 +788,7 @@
       }
 
       .benefit-content h4 {
-        color: #166534;
+        color: var(--primary-green-dark);
         margin-bottom: 0.3rem;
       }
 
@@ -721,8 +821,8 @@
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
-        background-color: #f0fdf4;
-        color: #10b981;
+        background-color: var(--primary-green-light-bg);
+        color: var(--primary-green);
         text-decoration: none;
         border-radius: 5px;
         transition: all 0.3s;
@@ -730,7 +830,7 @@
       }
 
       .share-btn:hover {
-        background-color: #10b981;
+        background-color: var(--primary-green);
         color: white;
       }
 
@@ -770,7 +870,7 @@
       }
 
       .faq-question:hover {
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
       }
 
       .faq-answer {
@@ -791,7 +891,7 @@
 
       .faq-toggle .material-icons {
         font-size: 1.5rem;
-        color: #10b981;
+        color: var(--primary-green);
       }
 
       .faq-item.active .faq-toggle {
@@ -801,7 +901,11 @@
       /* CTA Section */
       .cta {
         padding: 80px 0;
-        background: linear-gradient(135deg, #065f46 0%, #10b981 100%);
+        background: linear-gradient(
+          135deg,
+          var(--primary-green-darkest) 0%,
+          var(--primary-green) 100%
+        );
         text-align: center;
         color: white;
       }
@@ -819,13 +923,13 @@
 
       .cta .btn {
         background-color: white;
-        color: #10b981;
+        color: var(--primary-green);
         font-size: 1.2rem;
         padding: 1rem 3rem;
       }
 
       .cta .btn:hover {
-        background-color: #f0fdf4;
+        background-color: var(--primary-green-light-bg);
       }
 
       /* Footer */
@@ -930,14 +1034,19 @@
       <div class="container">
         <h1>Offline-First Visual Mind Mapping, Built to Last</h1>
         <p class="subtitle">
-          Tame scattered thoughts with our free mind mapping software. Capture ideas visually using this browser-based mind map maker. Work offline — and
-          export everything to Markdown so your thinking keeps flowing. The best mind mapping tool for students, writers, and project managers.
+          Tame scattered thoughts with our free mind mapping software. Capture
+          ideas visually using this browser-based mind map maker. Work offline —
+          and export everything to Markdown so your thinking keeps flowing. The
+          best mind mapping tool for students, writers, and project managers.
         </p>
         <div class="hero-buttons">
           <a href="https://dumbnote.app/mindmap" class="btn btn-primary"
             >Try Mindmap Now</a
           >
-          <a href="./index.html" download="dumbnote-mindmap.html" class="btn btn-secondary"
+          <a
+            href="./index.html"
+            download="dumbnote-mindmap.html"
+            class="btn btn-secondary"
             >Download HTML File</a
           >
         </div>
@@ -1080,8 +1189,9 @@
             <div>
               <h3>Planning Complex Projects</h3>
               <p>
-                Break down large projects into manageable pieces using visual project planning techniques. See
-                dependencies and relationships clearly with our mind mapping software for project management.
+                Break down large projects into manageable pieces using visual
+                project planning techniques. See dependencies and relationships
+                clearly with our mind mapping software for project management.
               </p>
             </div>
           </div>
@@ -1104,8 +1214,10 @@
             <div>
               <h3>Structuring Content</h3>
               <p>
-                Use our outline maker and content planning tool to structure articles, books, or presentations. Export mind maps to Markdown
-                when ready to write. Perfect visual outlining software for content creators.
+                Use our outline maker and content planning tool to structure
+                articles, books, or presentations. Export mind maps to Markdown
+                when ready to write. Perfect visual outlining software for
+                content creators.
               </p>
             </div>
           </div>
@@ -1237,7 +1349,9 @@
       <div class="container">
         <h2>Free Mind Mapping Alternative to Popular Tools</h2>
         <p class="alternatives-subtitle">
-          Looking for a MindMeister alternative or XMind replacement? Compare how Dumbnote Mindmap stacks up against popular mind mapping software for brainstorming and visual thinking.
+          Looking for a MindMeister alternative or XMind replacement? Compare
+          how Dumbnote Mindmap stacks up against popular mind mapping software
+          for brainstorming and visual thinking.
         </p>
         <div class="alternatives-grid">
           <div class="alternative-card">
@@ -1250,10 +1364,13 @@
             </ul>
             <div class="why-dumbnote">
               <h4>Why Choose Dumbnote Mindmap?</h4>
-              <p>Unlimited offline mind maps, free forever. Your visual brainstorming tool works anywhere without internet.</p>
+              <p>
+                Unlimited offline mind maps, free forever. Your visual
+                brainstorming tool works anywhere without internet.
+              </p>
             </div>
           </div>
-          
+
           <div class="alternative-card">
             <h3>Alternative to XMind</h3>
             <ul class="alternative-features">
@@ -1264,10 +1381,13 @@
             </ul>
             <div class="why-dumbnote">
               <h4>Why Choose Dumbnote Mindmap?</h4>
-              <p>No installation needed - just open in browser. Simple keyboard-driven mind mapping for fast idea capture.</p>
+              <p>
+                No installation needed - just open in browser. Simple
+                keyboard-driven mind mapping for fast idea capture.
+              </p>
             </div>
           </div>
-          
+
           <div class="alternative-card">
             <h3>Alternative to Coggle</h3>
             <ul class="alternative-features">
@@ -1278,10 +1398,13 @@
             </ul>
             <div class="why-dumbnote">
               <h4>Why Choose Dumbnote Mindmap?</h4>
-              <p>Complete privacy with no login required. Create unlimited concept maps offline with markdown export.</p>
+              <p>
+                Complete privacy with no login required. Create unlimited
+                concept maps offline with markdown export.
+              </p>
             </div>
           </div>
-          
+
           <div class="alternative-card">
             <h3>Alternative to FreeMind</h3>
             <ul class="alternative-features">
@@ -1292,10 +1415,13 @@
             </ul>
             <div class="why-dumbnote">
               <h4>Why Choose Dumbnote Mindmap?</h4>
-              <p>Modern web-based mind mapping tool with clean UI. Export to markdown for seamless workflow integration.</p>
+              <p>
+                Modern web-based mind mapping tool with clean UI. Export to
+                markdown for seamless workflow integration.
+              </p>
             </div>
           </div>
-          
+
           <div class="alternative-card">
             <h3>Alternative to Lucidchart</h3>
             <ul class="alternative-features">
@@ -1306,10 +1432,13 @@
             </ul>
             <div class="why-dumbnote">
               <h4>Why Choose Dumbnote Mindmap?</h4>
-              <p>Focused on simple visual note-taking and brainstorming. Perfect for personal knowledge management.</p>
+              <p>
+                Focused on simple visual note-taking and brainstorming. Perfect
+                for personal knowledge management.
+              </p>
             </div>
           </div>
-          
+
           <div class="alternative-card">
             <h3>Alternative to MindNode</h3>
             <ul class="alternative-features">
@@ -1320,7 +1449,10 @@
             </ul>
             <div class="why-dumbnote">
               <h4>Why Choose Dumbnote Mindmap?</h4>
-              <p>Cross-platform mind mapping that works on any device with a browser. No ecosystem lock-in.</p>
+              <p>
+                Cross-platform mind mapping that works on any device with a
+                browser. No ecosystem lock-in.
+              </p>
             </div>
           </div>
         </div>
@@ -1332,12 +1464,14 @@
       <div class="container">
         <h2>Mind Mapping Benefits: Research-Backed Results</h2>
         <p class="infographics-subtitle">
-          Discover why visual thinking tools and mind mapping techniques improve memory retention, boost creativity, and enhance productivity for learners and professionals.
+          Discover why visual thinking tools and mind mapping techniques improve
+          memory retention, boost creativity, and enhance productivity for
+          learners and professionals.
         </p>
-        
+
         <div class="infographic-container">
           <h3 class="infographic-title">The Science of Mind Mapping</h3>
-          
+
           <div class="stats-grid">
             <div class="stat-card">
               <div class="stat-number">23%</div>
@@ -1352,7 +1486,7 @@
               <div class="stat-label">Creativity Boost</div>
             </div>
           </div>
-          
+
           <ul class="benefits-list">
             <li class="benefit-item">
               <div class="benefit-icon">
@@ -1360,49 +1494,75 @@
               </div>
               <div class="benefit-content">
                 <h4>Enhanced Learning & Study Techniques</h4>
-                <p>Visual mind maps help students organize complex information, making study sessions more effective and improving exam preparation strategies.</p>
+                <p>
+                  Visual mind maps help students organize complex information,
+                  making study sessions more effective and improving exam
+                  preparation strategies.
+                </p>
               </div>
             </li>
-            
+
             <li class="benefit-item">
               <div class="benefit-icon">
                 <span class="material-icons">group</span>
               </div>
               <div class="benefit-content">
                 <h4>Better Team Collaboration</h4>
-                <p>Mind mapping in meetings increases engagement and helps teams visualize project scope, leading to clearer communication and faster decision-making.</p>
+                <p>
+                  Mind mapping in meetings increases engagement and helps teams
+                  visualize project scope, leading to clearer communication and
+                  faster decision-making.
+                </p>
               </div>
             </li>
-            
+
             <li class="benefit-item">
               <div class="benefit-icon">
                 <span class="material-icons">trending_up</span>
               </div>
               <div class="benefit-content">
                 <h4>Improved Problem-Solving Skills</h4>
-                <p>Breaking down complex problems visually helps identify patterns and connections, leading to innovative solutions and strategic thinking.</p>
+                <p>
+                  Breaking down complex problems visually helps identify
+                  patterns and connections, leading to innovative solutions and
+                  strategic thinking.
+                </p>
               </div>
             </li>
-            
+
             <li class="benefit-item">
               <div class="benefit-icon">
                 <span class="material-icons">timer</span>
               </div>
               <div class="benefit-content">
                 <h4>Time-Saving Organization</h4>
-                <p>Users report saving 3-7 hours per week by organizing thoughts visually, reducing time spent searching for information and planning tasks.</p>
+                <p>
+                  Users report saving 3-7 hours per week by organizing thoughts
+                  visually, reducing time spent searching for information and
+                  planning tasks.
+                </p>
               </div>
             </li>
           </ul>
-          
+
           <div class="share-section">
-            <p class="share-text">Share these mind mapping benefits with your team:</p>
+            <p class="share-text">
+              Share these mind mapping benefits with your team:
+            </p>
             <div class="share-buttons">
-              <a href="#" class="share-btn" onclick="navigator.clipboard.writeText('Mind mapping increases productivity by 23% and improves memory retention by 15%. Try Dumbnote Mindmap - a free offline tool: https://dumbnote.app/mindmap'); alert('Copied to clipboard!'); return false;">
+              <a
+                href="#"
+                class="share-btn"
+                onclick="navigator.clipboard.writeText('Mind mapping increases productivity by 23% and improves memory retention by 15%. Try Dumbnote Mindmap - a free offline tool: https://dumbnote.app/mindmap'); alert('Copied to clipboard!'); return false;"
+              >
                 <span class="material-icons">content_copy</span>
                 Copy Stats
               </a>
-              <a href="https://twitter.com/intent/tweet?text=Mind%20mapping%20increases%20productivity%20by%2023%25%20and%20improves%20memory%20retention%20by%2015%25.%20Try%20Dumbnote%20Mindmap%20-%20a%20free%20offline%20tool%3A&url=https%3A%2F%2Fdumbnote.app%2Fmindmap" target="_blank" class="share-btn">
+              <a
+                href="https://twitter.com/intent/tweet?text=Mind%20mapping%20increases%20productivity%20by%2023%25%20and%20improves%20memory%20retention%20by%2015%25.%20Try%20Dumbnote%20Mindmap%20-%20a%20free%20offline%20tool%3A&url=https%3A%2F%2Fdumbnote.app%2Fmindmap"
+                target="_blank"
+                class="share-btn"
+              >
                 <span class="material-icons">share</span>
                 Share on X
               </a>
