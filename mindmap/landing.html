@@ -39,7 +39,7 @@
     />
     <meta
       property="og:image"
-      content="https://dumbnote.app/assets/images/dumbnote-mindmap-screenshot.png"
+      content="https://dumbnote.app/assets/images/dumbnote-mindmap-overview.png"
     />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -57,7 +57,7 @@
     />
     <meta
       property="twitter:image"
-      content="https://dumbnote.app/assets/images/dumbnote-mindmap-screenshot.png"
+      content="https://dumbnote.app/assets/images/dumbnote-mindmap-overview.png"
     />
 
     <!-- Favicon -->
@@ -75,7 +75,7 @@
 
     <!-- Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;500;600;700;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
@@ -118,7 +118,7 @@
           "No login required",
           "Privacy-focused"
         ],
-        "screenshot": "https://dumbnote.app/assets/images/dumbnote-mindmap-screenshot.png"
+        "screenshot": "https://dumbnote.app/assets/images/dumbnote-mindmap-overview.png"
       }
     </script>
 
@@ -131,10 +131,11 @@
       }
 
       body {
-        font-family: "Red Hat Display", sans-serif;
-        color: #333;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: var(--text-primary);
         line-height: 1.6;
-        background-color: #f9f9f9;
+        background-color: var(--bg-primary);
       }
 
       h1,
@@ -143,10 +144,12 @@
       h4,
       h5,
       h6 {
-        font-family: "Red Hat Display", sans-serif;
-        font-weight: 700;
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-weight: 600;
         line-height: 1.2;
         margin-bottom: 1rem;
+        color: var(--text-primary);
       }
 
       .container {
@@ -157,24 +160,41 @@
 
       /* Color Options - Uncomment the set you prefer */
 
-      /* Option 1: Vibrant Emerald (Current - Enhanced) */
+      /* Stripe-style Clean Design with Green Accents */
       :root {
-        --primary-green: #10b981;
-        --primary-green-hover: #059669;
-        --primary-green-dark: #166534;
-        --primary-green-light-bg: #f0fdf4;
-        --primary-green-light: #dcfce7;
-        --primary-green-darkest: #065f46;
-      }
+        /* Primary colors */
+        --primary-green: #00d924;
+        --primary-green-hover: #00b81f;
+        --primary-green-dark: #00a01a;
+        --primary-green-light-bg: rgba(0, 217, 36, 0.04);
+        --primary-green-light: rgba(0, 217, 36, 0.08);
+        --primary-green-darkest: #008015;
 
-      /* TEST: Try Option 2 - Bold Forest Green (Stronger) */
-      :root {
-        --primary-green: #16a34a;
-        --primary-green-hover: #15803d;
-        --primary-green-dark: #14532d;
-        --primary-green-light-bg: #d1fae5; /* Stronger light green background */
-        --primary-green-light: #a7f3d0; /* More saturated light green */
-        --primary-green-darkest: #052e16;
+        /* Background colors */
+        --bg-primary: #ffffff;
+        --bg-secondary: rgba(255, 255, 255, 0.95);
+        --bg-translucent: rgba(255, 255, 255, 0.8);
+        --bg-overlay: rgba(255, 255, 255, 0.9);
+        --bg-glass: rgba(255, 255, 255, 0.7);
+
+        /* Text colors */
+        --text-primary: #0a2540;
+        --text-secondary: #425466;
+        --text-tertiary: #697386;
+        --text-light: #8792a2;
+
+        /* Border colors */
+        --border-light: #e3e8ee;
+        --border-medium: #c9d3df;
+        --border-focus: var(--primary-green);
+
+        /* Shadow and effects */
+        --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.04);
+        --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.04),
+          0 2px 4px -1px rgba(0, 0, 0, 0.02);
+        --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.04),
+          0 4px 6px -2px rgba(0, 0, 0, 0.02);
+        --blur-glass: blur(10px);
       }
 
       /* Option 2: Bold Forest Green 
@@ -212,12 +232,37 @@
 
       /* Header */
       header {
-        background-color: #fff;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background-color: var(--bg-primary);
+        box-shadow: var(--shadow-sm);
+        border-bottom: 1px solid var(--border-light);
         position: fixed;
         width: 100%;
         top: 0;
         z-index: 1000;
+        backdrop-filter: var(--blur-glass) saturate(180%);
+        background-color: var(--bg-glass);
+        transition: all 0.3s ease;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-green),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      header:hover::before {
+        opacity: 1;
       }
 
       nav {
@@ -231,9 +276,26 @@
         display: flex;
         align-items: center;
         text-decoration: none;
-        color: #333;
-        font-weight: 700;
+        color: var(--text-primary);
+        font-weight: 600;
         font-size: 1rem;
+        transition: all 0.3s ease;
+      }
+
+      .logo:hover {
+        transform: scale(1.05);
+      }
+
+      .logo span {
+        background: linear-gradient(
+          135deg,
+          var(--text-primary) 0%,
+          var(--primary-green) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        font-weight: 700;
       }
 
       .logo img {
@@ -250,37 +312,58 @@
 
       .nav-links a {
         text-decoration: none;
-        color: #666;
-        transition: color 0.3s;
-        font-size: 15px;
+        color: var(--text-secondary);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        position: relative;
+        padding: 0.5rem 0;
+      }
+
+      .nav-links a::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-green);
+        transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
       }
 
       .nav-links a:hover {
-        color: var(--primary-green);
+        color: var(--text-primary);
+        transform: translateY(-1px);
       }
 
       /* Hero Section */
       .hero {
-        padding: 120px 0 80px;
-        background: radial-gradient(
-            ellipse at top left,
-            rgba(255, 255, 255, 0.3) 0%,
-            transparent 50%
-          ),
-          radial-gradient(
-            ellipse at bottom right,
-            var(--primary-green-light) 0%,
-            transparent 50%
-          ),
-          linear-gradient(
-            135deg,
-            var(--primary-green-light-bg) 0%,
-            var(--primary-green-light) 50%,
-            var(--primary-green-light-bg) 100%
-          );
+        padding: 140px 0 180px;
+        background: var(--bg-primary);
         text-align: center;
         position: relative;
         overflow: hidden;
+      }
+
+      .hero::after {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          var(--bg-secondary)
+        );
+        pointer-events: none;
       }
 
       .hero::before {
@@ -311,15 +394,177 @@
         }
       }
 
+      /* Screenshot Carousel */
+      .carousel-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        position: relative;
+        padding: 2rem 0;
+      }
+
+      .carousel-wrapper {
+        position: relative;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--border-light);
+        background: var(--bg-primary);
+      }
+
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      .carousel-slide {
+        flex: 0 0 100%;
+        position: relative;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .carousel-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(10, 37, 64, 0.9), transparent);
+        color: white;
+        padding: 2rem;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+      }
+
+      .carousel-slide:hover .carousel-caption {
+        transform: translateY(0);
+      }
+
+      .carousel-caption h4 {
+        color: white;
+        margin-bottom: 0.5rem;
+        font-size: 1.2rem;
+      }
+
+      .carousel-caption p {
+        color: rgba(255, 255, 255, 0.9);
+        margin: 0;
+        font-size: 0.95rem;
+      }
+
+      .carousel-nav {
+        position: absolute;
+        bottom: -3rem;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        gap: 0.75rem;
+      }
+
+      .carousel-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--border-light);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: none;
+        padding: 0;
+      }
+
+      .carousel-dot.active {
+        width: 24px;
+        border-radius: 4px;
+        background: var(--primary-green);
+      }
+
+      .carousel-dot:hover:not(.active) {
+        background: var(--border-medium);
+      }
+
+      .carousel-arrows {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        padding: 0 1rem;
+      }
+
+      .carousel-arrow {
+        width: 48px;
+        height: 48px;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        pointer-events: all;
+        transition: all 0.2s ease;
+        opacity: 0;
+      }
+
+      .carousel-container:hover .carousel-arrow {
+        opacity: 1;
+      }
+
+      .carousel-arrow:hover {
+        background: var(--bg-secondary);
+        border-color: var(--primary-green);
+        transform: scale(1.1);
+      }
+
+      .carousel-arrow .material-icons {
+        color: var(--text-primary);
+        font-size: 1.5rem;
+      }
+
+      .carousel-arrow:hover .material-icons {
+        color: var(--primary-green);
+      }
+
+      /* Smooth scroll behavior */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Focus states for accessibility */
+      *:focus {
+        outline: 2px solid var(--primary-green);
+        outline-offset: 2px;
+      }
+
+      button:focus,
+      a:focus {
+        outline: 2px solid var(--primary-green);
+        outline-offset: 2px;
+      }
+
       .hero h1 {
-        font-size: 3rem;
-        color: var(--primary-green-dark);
+        font-size: 3.5rem;
+        color: var(--text-primary);
         margin-bottom: 1.5rem;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+        line-height: 1.1;
+      }
+
+      @media (min-width: 768px) {
+        .hero h1 {
+          font-size: 4.5rem;
+        }
       }
 
       .hero .subtitle {
         font-size: 1.25rem;
-        color: #666;
+        color: var(--text-secondary);
         max-width: 800px;
         margin: 0 auto 2rem;
         line-height: 1.8;
@@ -333,49 +578,235 @@
         margin-bottom: 3rem;
       }
 
+      .hero-scroll-hint {
+        position: absolute;
+        bottom: 2rem;
+        left: 50%;
+        transform: translateX(-50%);
+        animation: bounce 2s infinite;
+      }
+
+      .hero-scroll-hint .material-icons {
+        font-size: 2rem;
+        color: var(--text-secondary);
+        opacity: 0.6;
+      }
+
+      @keyframes bounce {
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+          transform: translateX(-50%) translateY(0);
+        }
+        40% {
+          transform: translateX(-50%) translateY(-10px);
+        }
+        60% {
+          transform: translateX(-50%) translateY(-5px);
+        }
+      }
+
       .btn {
         display: inline-block;
-        padding: 1rem 2rem;
+        padding: 0.75rem 1.5rem;
         text-decoration: none;
-        border-radius: 30px;
-        font-weight: 600;
-        transition: all 0.3s;
-        font-size: 1.1rem;
+        border-radius: 6px;
+        font-weight: 500;
+        transition: all 0.2s;
+        font-size: 1rem;
       }
 
       .btn-primary {
         background-color: var(--primary-green);
         color: white;
-        box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        box-shadow: var(--shadow-md);
+        border: 1px solid var(--primary-green);
       }
 
       .btn-primary:hover {
         background-color: var(--primary-green-hover);
-        transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+        transform: translateY(-1px);
+        box-shadow: var(--shadow-lg);
       }
 
       .btn-secondary {
-        background-color: white;
-        color: var(--primary-green);
-        border: 2px solid var(--primary-green);
+        background-color: var(--bg-primary);
+        color: var(--text-primary);
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-sm);
       }
 
       .btn-secondary:hover {
-        background-color: var(--primary-green-light-bg);
-        transform: translateY(-2px);
+        background-color: var(--bg-secondary);
+        transform: translateY(-1px);
+        border-color: var(--border-medium);
+        box-shadow: var(--shadow-md);
       }
 
       .hero-image {
         max-width: 100%;
-        border-radius: 10px;
-        /*  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);  */
+        border-radius: 8px;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-lg);
+      }
+
+      /* Features in Action Section */
+      .features-action {
+        padding: 80px 0;
+        background: linear-gradient(
+          to bottom,
+          var(--bg-secondary),
+          var(--bg-primary)
+        );
+        position: relative;
+      }
+
+      .features-action h2 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .features-action-subtitle {
+        text-align: center;
+        color: var(--text-secondary);
+        max-width: 700px;
+        margin: 0 auto 3rem;
+        line-height: 1.8;
+      }
+
+      .feature-showcase {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+        margin-bottom: 4rem;
+      }
+
+      .feature-showcase.reverse {
+        direction: rtl;
+      }
+
+      .feature-showcase.reverse .feature-content {
+        direction: ltr;
+      }
+
+      .feature-content {
+        padding: 2rem;
+      }
+
+      .feature-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: var(--primary-green-light-bg);
+        color: var(--primary-green-dark);
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        border: 1px solid var(--primary-green-light);
+      }
+
+      .feature-badge .material-icons {
+        font-size: 1rem;
+      }
+
+      .feature-content h3 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .feature-content p {
+        color: var(--text-secondary);
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+      }
+
+      .feature-points {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 2rem 0;
+      }
+
+      .feature-points li {
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        margin-bottom: 1rem;
+        color: var(--text-secondary);
+      }
+
+      .feature-points .material-icons {
+        color: var(--primary-green);
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+
+      .feature-visual {
+        position: relative;
+        background: var(--bg-primary);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        border: 1px solid var(--border-light);
+        transition: all 0.3s ease;
+      }
+
+      .feature-visual:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 30px 50px -15px rgba(0, 0, 0, 0.15);
+        border-color: var(--primary-green);
+      }
+
+      .feature-visual img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      .feature-visual-overlay {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        background: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 600;
+        color: var(--text-primary);
+        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+      }
+
+      .feature-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--primary-green);
+        font-weight: 600;
+        text-decoration: none;
+        transition: gap 0.2s ease;
+      }
+
+      .feature-cta:hover {
+        gap: 0.75rem;
+      }
+
+      .feature-cta .material-icons {
+        font-size: 1.25rem;
       }
 
       /* Value Props Section */
       .value-props {
         padding: 80px 0;
-        background-color: white;
+        background-color: var(--bg-primary);
       }
 
       .value-props h2 {
@@ -398,21 +829,28 @@
         align-items: flex-start;
         gap: 1.5rem;
         padding: 1.5rem;
+        transition: all 0.2s;
+        border-radius: 8px;
+      }
+
+      .prop-card:hover {
+        background-color: var(--bg-secondary);
       }
 
       .prop-icon {
-        width: 60px;
-        height: 60px;
+        width: 48px;
+        height: 48px;
         flex-shrink: 0;
-        background-color: var(--primary-green-light-bg);
-        border-radius: 50%;
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
         display: flex;
         align-items: center;
         justify-content: center;
       }
 
       .prop-icon .material-icons {
-        font-size: 2rem;
+        font-size: 1.5rem;
         color: var(--primary-green);
       }
 
@@ -421,13 +859,13 @@
       }
 
       .prop-card h3 {
-        color: var(--primary-green-dark);
+        color: var(--text-primary);
         margin-bottom: 0.5rem;
         font-size: 1.25rem;
       }
 
       .prop-card p {
-        color: #666;
+        color: var(--text-secondary);
         line-height: 1.8;
         margin: 0;
       }
@@ -435,7 +873,7 @@
       /* Features Section */
       .features {
         padding: 80px 0;
-        background-color: #f9f9f9;
+        background-color: var(--bg-secondary);
       }
 
       .features h2 {
@@ -451,31 +889,33 @@
       }
 
       .feature-item {
-        background-color: white;
+        background-color: var(--bg-primary);
         padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-        transition: transform 0.3s;
+        border-radius: 8px;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s;
       }
 
       .feature-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        transform: translateY(-2px);
+        border-color: var(--primary-green);
+        box-shadow: var(--shadow-md);
       }
 
       .feature-item h3 {
-        color: var(--primary-green);
+        color: var(--text-primary);
         margin-bottom: 0.5rem;
       }
 
       .feature-item p {
-        color: #666;
+        color: var(--text-secondary);
       }
 
       /* Use Cases Section */
       .use-cases {
         padding: 80px 0;
-        background-color: white;
+        background-color: var(--bg-primary);
       }
 
       .use-cases h2 {
@@ -513,14 +953,14 @@
       }
 
       .use-case p {
-        color: #666;
+        color: var(--text-secondary);
         font-size: 0.95rem;
       }
 
       /* How It Works Section */
       .how-it-works {
         padding: 80px 0;
-        background-color: var(--primary-green-light-bg);
+        background-color: var(--bg-secondary);
       }
 
       .how-it-works h2 {
@@ -542,16 +982,17 @@
       }
 
       .step-number {
-        width: 60px;
-        height: 60px;
-        background-color: var(--primary-green);
-        color: white;
+        width: 48px;
+        height: 48px;
+        background-color: var(--bg-primary);
+        color: var(--primary-green);
+        border: 2px solid var(--primary-green);
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 1.5rem;
-        font-weight: 700;
+        font-size: 1.25rem;
+        font-weight: 600;
         margin: 0 auto 1rem;
       }
 
@@ -560,13 +1001,13 @@
       }
 
       .step p {
-        color: #666;
+        color: var(--text-secondary);
       }
 
       /* Comparison Section */
       .comparison {
         padding: 80px 0;
-        background-color: white;
+        background-color: var(--bg-primary);
       }
 
       .comparison h2 {
@@ -584,21 +1025,23 @@
       table {
         width: 100%;
         border-collapse: collapse;
-        background-color: white;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        background-color: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        border-radius: 8px;
+        overflow: hidden;
       }
 
       th,
       td {
         padding: 1rem;
         text-align: left;
-        border-bottom: 1px solid #e5e7eb;
+        border-bottom: 1px solid var(--border-light);
       }
 
       th {
-        background-color: #f9f9f9;
+        background-color: var(--bg-secondary);
         font-weight: 600;
-        color: var(--primary-green-dark);
+        color: var(--text-primary);
       }
 
       .check {
@@ -614,7 +1057,7 @@
       /* Alternatives Section */
       .alternatives {
         padding: 80px 0;
-        background-color: var(--primary-green-light-bg);
+        background-color: var(--bg-secondary);
       }
 
       .alternatives h2 {
@@ -625,7 +1068,7 @@
 
       .alternatives-subtitle {
         text-align: center;
-        color: #666;
+        color: var(--text-secondary);
         max-width: 700px;
         margin: 0 auto 3rem;
         line-height: 1.8;
@@ -640,14 +1083,22 @@
       }
 
       .alternative-card {
-        background-color: white;
+        background-color: var(--bg-primary);
         padding: 2rem;
-        border-radius: 10px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-sm);
+        transition: all 0.2s;
+      }
+
+      .alternative-card:hover {
+        border-color: var(--primary-green);
+        box-shadow: var(--shadow-md);
+        transform: translateY(-2px);
       }
 
       .alternative-card h3 {
-        color: var(--primary-green-dark);
+        color: var(--text-primary);
         margin-bottom: 1rem;
         font-size: 1.5rem;
       }
@@ -660,7 +1111,7 @@
 
       .alternative-features li {
         padding: 0.5rem 0;
-        color: #666;
+        color: var(--text-secondary);
         position: relative;
         padding-left: 1.5rem;
       }
@@ -675,10 +1126,11 @@
       }
 
       .why-dumbnote {
-        background-color: var(--primary-green-light-bg);
+        background-color: var(--bg-secondary);
         padding: 1.5rem;
         border-radius: 8px;
         margin-top: 1rem;
+        border: 1px solid var(--border-light);
       }
 
       .why-dumbnote h4 {
@@ -689,13 +1141,13 @@
 
       .why-dumbnote p {
         margin: 0;
-        color: #666;
+        color: var(--text-secondary);
       }
 
       /* Infographics Section */
       .infographics {
         padding: 80px 0;
-        background-color: #fff;
+        background-color: var(--bg-primary);
       }
 
       .infographics h2 {
@@ -706,7 +1158,7 @@
 
       .infographics-subtitle {
         text-align: center;
-        color: #666;
+        color: var(--text-secondary);
         max-width: 700px;
         margin: 0 auto 3rem;
         line-height: 1.8;
@@ -715,15 +1167,16 @@
       .infographic-container {
         max-width: 800px;
         margin: 0 auto 3rem;
-        background-color: var(--primary-green-light-bg);
-        border-radius: 10px;
+        background-color: var(--bg-secondary);
+        border-radius: 8px;
         padding: 3rem;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-light);
+        box-shadow: var(--shadow-md);
       }
 
       .infographic-title {
         text-align: center;
-        color: var(--primary-green-dark);
+        color: var(--text-primary);
         font-size: 1.8rem;
         margin-bottom: 2rem;
       }
@@ -738,9 +1191,9 @@
       .stat-card {
         text-align: center;
         padding: 1.5rem;
-        background-color: white;
+        background-color: var(--bg-primary);
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-light);
       }
 
       .stat-number {
@@ -751,7 +1204,7 @@
       }
 
       .stat-label {
-        color: #666;
+        color: var(--text-secondary);
         font-size: 0.9rem;
       }
 
@@ -767,15 +1220,17 @@
         gap: 1rem;
         margin-bottom: 1.5rem;
         padding: 1rem;
-        background-color: white;
+        background-color: var(--bg-primary);
         border-radius: 8px;
+        border: 1px solid var(--border-light);
       }
 
       .benefit-icon {
         flex-shrink: 0;
         width: 40px;
         height: 40px;
-        background-color: var(--primary-green);
+        background-color: var(--bg-primary);
+        border: 2px solid var(--primary-green);
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -783,17 +1238,17 @@
       }
 
       .benefit-icon .material-icons {
-        color: white;
+        color: var(--primary-green);
         font-size: 1.2rem;
       }
 
       .benefit-content h4 {
-        color: var(--primary-green-dark);
+        color: var(--text-primary);
         margin-bottom: 0.3rem;
       }
 
       .benefit-content p {
-        color: #666;
+        color: var(--text-secondary);
         margin: 0;
         font-size: 0.95rem;
       }
@@ -806,7 +1261,7 @@
       }
 
       .share-text {
-        color: #666;
+        color: var(--text-secondary);
         margin-bottom: 1rem;
       }
 
@@ -821,23 +1276,25 @@
         align-items: center;
         gap: 0.5rem;
         padding: 0.5rem 1rem;
-        background-color: var(--primary-green-light-bg);
-        color: var(--primary-green);
+        background-color: var(--bg-primary);
+        color: var(--text-secondary);
         text-decoration: none;
-        border-radius: 5px;
-        transition: all 0.3s;
+        border-radius: 6px;
+        border: 1px solid var(--border-light);
+        transition: all 0.2s;
         font-size: 0.9rem;
       }
 
       .share-btn:hover {
-        background-color: var(--primary-green);
-        color: white;
+        background-color: var(--bg-secondary);
+        color: var(--primary-green);
+        border-color: var(--primary-green);
       }
 
       /* FAQ Section */
       .faq {
         padding: 80px 0;
-        background-color: #f9f9f9;
+        background-color: var(--bg-secondary);
       }
 
       .faq h2 {
@@ -852,11 +1309,12 @@
       }
 
       .faq-item {
-        background-color: white;
+        background-color: var(--bg-primary);
         margin-bottom: 1rem;
-        border-radius: 10px;
+        border-radius: 8px;
         overflow: hidden;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--border-light);
+        transition: all 0.2s;
       }
 
       .faq-question {
@@ -870,7 +1328,7 @@
       }
 
       .faq-question:hover {
-        background-color: var(--primary-green-light-bg);
+        background-color: var(--bg-secondary);
       }
 
       .faq-answer {
@@ -883,6 +1341,11 @@
       .faq-item.active .faq-answer {
         max-height: 300px;
         padding: 0 1.5rem 1.5rem;
+      }
+
+      .faq-item.active {
+        border-color: var(--primary-green);
+        box-shadow: var(--shadow-md);
       }
 
       .faq-toggle {
@@ -901,13 +1364,11 @@
       /* CTA Section */
       .cta {
         padding: 80px 0;
-        background: linear-gradient(
-          135deg,
-          var(--primary-green-darkest) 0%,
-          var(--primary-green) 100%
-        );
+        background: var(--text-primary);
         text-align: center;
         color: white;
+        position: relative;
+        overflow: hidden;
       }
 
       .cta h2 {
@@ -922,19 +1383,22 @@
       }
 
       .cta .btn {
-        background-color: white;
-        color: var(--primary-green);
-        font-size: 1.2rem;
-        padding: 1rem 3rem;
+        background-color: var(--primary-green);
+        color: white;
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        border: 1px solid var(--primary-green);
       }
 
       .cta .btn:hover {
-        background-color: var(--primary-green-light-bg);
+        background-color: var(--primary-green-hover);
+        border-color: var(--primary-green-hover);
+        transform: translateY(-1px);
       }
 
       /* Footer */
       footer {
-        background-color: #333;
+        background-color: var(--text-primary);
         color: white;
         padding: 40px 0;
         text-align: center;
@@ -951,15 +1415,294 @@
       .footer-links a {
         color: white;
         text-decoration: none;
-        opacity: 0.8;
-        transition: opacity 0.3s;
+        opacity: 0.7;
+        transition: opacity 0.2s;
       }
 
       .footer-links a:hover {
         opacity: 1;
       }
 
+      /* Screenshots Carousel */
+      .screenshots-carousel {
+        padding: 80px 0;
+        background: var(--bg-primary);
+        position: relative;
+        overflow: hidden;
+        margin: 0;
+      }
+
+      .carousel-container {
+        position: relative;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 60px;
+      }
+
+      .carousel-track {
+        position: relative;
+        width: 100%;
+        height: 700px;
+      }
+
+      .carousel-slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 0.5s ease, visibility 0.5s ease;
+      }
+
+      .carousel-slide.active {
+        opacity: 1;
+        visibility: visible;
+      }
+
+      .carousel-content {
+        background: var(--bg-primary);
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.04),
+          0 10px 15px rgba(0, 0, 0, 0.02);
+        border: 1px solid var(--border-light);
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+      }
+
+      .carousel-content::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          var(--primary-green),
+          transparent
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .carousel-content:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08),
+          0 20px 40px rgba(0, 0, 0, 0.04);
+      }
+
+      .carousel-content:hover::before {
+        opacity: 1;
+      }
+
+      .carousel-slide img {
+        width: 100%;
+        height: 500px;
+        object-fit: cover;
+        object-position: top center;
+      }
+
+      .slide-content {
+        padding: 2rem;
+        background: var(--bg-primary);
+      }
+
+      .slide-content h3 {
+        color: var(--text-primary);
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+      }
+
+      .slide-content p {
+        color: var(--text-secondary);
+        font-size: 1rem;
+        margin: 0;
+        line-height: 1.6;
+      }
+
+      .carousel-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: calc(100% + 120px);
+        left: -60px;
+        display: flex;
+        justify-content: space-between;
+        padding: 0;
+        pointer-events: none;
+      }
+
+      .carousel-nav button {
+        background: var(--bg-primary);
+        border: 1px solid var(--border-light);
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        pointer-events: all;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .carousel-nav button:hover {
+        background: var(--bg-secondary);
+        transform: scale(1.1);
+        border-color: var(--primary-green);
+      }
+
+      .carousel-nav button:active {
+        transform: scale(0.95);
+      }
+
+      .carousel-nav .material-icons {
+        font-size: 1.5rem;
+        color: var(--text-primary);
+      }
+
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        gap: 0.5rem;
+        margin-top: 2rem;
+      }
+
+      .carousel-indicators button {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        border: 1px solid var(--border-light);
+        background: var(--bg-primary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        padding: 0;
+      }
+
+      .carousel-indicators button.active {
+        background: var(--primary-green);
+        border-color: var(--primary-green);
+        transform: scale(1.2);
+      }
+
+      .carousel-indicators button:hover:not(.active) {
+        background: var(--bg-secondary);
+      }
+
+      /* Overflow gradient effect */
+      .carousel-container::before,
+      .carousel-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .carousel-container::before {
+        left: 0;
+        background: linear-gradient(
+          90deg,
+          var(--bg-primary) 0%,
+          transparent 100%
+        );
+      }
+
+      .carousel-container::after {
+        right: 0;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          var(--bg-primary) 100%
+        );
+      }
+
       /* Responsive Design */
+      @media (max-width: 768px) {
+        .feature-showcase {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .carousel-container {
+          padding: 0 40px;
+        }
+
+        .carousel-track {
+          height: 600px;
+        }
+
+        .carousel-slide img {
+          height: 350px;
+        }
+
+        .carousel-nav {
+          width: calc(100% + 80px);
+          left: -40px;
+        }
+
+        .slide-content {
+          padding: 1.5rem;
+        }
+
+        .slide-content h3 {
+          font-size: 1.25rem;
+        }
+
+        .slide-content p {
+          font-size: 0.95rem;
+        }
+
+        .carousel-container::before,
+        .carousel-container::after {
+          width: 20px;
+        }
+
+        .carousel-track {
+          gap: 1rem;
+          padding: 1rem 0;
+        }
+
+        .feature-showcase.reverse {
+          direction: ltr;
+        }
+
+        .feature-content {
+          padding: 1rem;
+        }
+
+        .feature-content h3 {
+          font-size: 1.5rem;
+        }
+
+        .carousel-arrow {
+          opacity: 1;
+          width: 40px;
+          height: 40px;
+        }
+
+        .carousel-caption {
+          transform: translateY(0);
+          padding: 1rem;
+        }
+
+        .carousel-caption h4 {
+          font-size: 1rem;
+        }
+
+        .carousel-caption p {
+          font-size: 0.875rem;
+        }
+      }
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2rem;
@@ -1018,7 +1761,7 @@
       <nav class="container">
         <a href="/" class="logo">
           <img src="./favicon.png" alt="Dumbnote Mindmap Logo" />
-          Dumbnote Mindmap
+          <span>Dumbnote Mindmap</span>
         </a>
         <ul class="nav-links">
           <li><a href="https://dumbnote.app">Dumbnote App</a></li>
@@ -1050,11 +1793,113 @@
             >Download HTML File</a
           >
         </div>
-        <img
-          src="../assets/images/dumbnote-mindmap-screenshot.png"
-          alt="Dumbnote Mindmap in action - visual mind mapping interface"
-          class="hero-image"
-        />
+        <div class="hero-scroll-hint">
+          <span class="material-icons">expand_more</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Screenshots Carousel -->
+    <section class="screenshots-carousel">
+      <div class="container">
+        <h2 style="text-align: center;">Experience Every Feature</h2>
+        <p
+          style="
+            text-align: center;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto 3rem;
+          "
+        >
+          Explore the different modes and capabilities that make Dumbnote
+          Mindmap the perfect tool for visual thinking
+        </p>
+      </div>
+      <div class="carousel-container">
+        <div class="carousel-track">
+          <div class="carousel-slide active">
+            <div class="carousel-content">
+              <img
+                src="../assets/images/dumbnote-mindmap-overview.png"
+                alt="Mind mapping interface"
+              />
+              <div class="slide-content">
+                <h3>Visual Mind Mapping</h3>
+                <p>
+                  Create beautiful, structured mind maps with an intuitive
+                  drag-and-drop interface. Organize your thoughts visually and
+                  see connections at a glance.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <img
+                src="../assets/images/dumbnote-mindmap-editor.png"
+                alt="Node editor with rich features"
+              />
+              <div class="slide-content">
+                <h3>Rich Node Editor</h3>
+                <p>
+                  Add descriptions, images, and customize node colors to
+                  organize your thoughts. Each node can contain detailed
+                  information without cluttering your map.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <img
+                src="../assets/images/dumbnote-mindmap-reader-mode.png"
+                alt="Clean reader mode"
+              />
+              <div class="slide-content">
+                <h3>Distraction-Free Reading</h3>
+                <p>
+                  Export to clean markdown with embedded images for seamless
+                  documentation. Perfect for sharing your ideas or converting to
+                  other formats.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-slide">
+            <div class="carousel-content">
+              <img
+                src="../assets/images/dumbnote-mindmap-overview.png"
+                alt="Project overview"
+              />
+              <div class="slide-content">
+                <h3>Bird's Eye View</h3>
+                <p>
+                  Navigate complex projects with zoom and pan controls for the
+                  perfect perspective. Never lose sight of the big picture while
+                  working on details.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-nav">
+          <button class="carousel-prev" aria-label="Previous slide">
+            <span class="material-icons">chevron_left</span>
+          </button>
+          <button class="carousel-next" aria-label="Next slide">
+            <span class="material-icons">chevron_right</span>
+          </button>
+        </div>
+      </div>
+      <div class="carousel-indicators">
+        <button
+          class="active"
+          data-slide="0"
+          aria-label="Go to slide 1"
+        ></button>
+        <button data-slide="1" aria-label="Go to slide 2"></button>
+        <button data-slide="2" aria-label="Go to slide 3"></button>
+        <button data-slide="3" aria-label="Go to slide 4"></button>
       </div>
     </section>
 
@@ -1121,6 +1966,195 @@
                 today and will work in 10 years.
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features in Action Section -->
+    <section class="features-action">
+      <div class="container">
+        <h2>See Dumbnote Mindmap in Action</h2>
+        <p class="features-action-subtitle">
+          Discover how different views and features work together to enhance
+          your visual thinking workflow
+        </p>
+
+        <!-- Feature 1: Editor Mode -->
+        <div class="feature-showcase">
+          <div class="feature-content">
+            <span class="feature-badge">
+              <span class="material-icons">edit</span>
+              Editor Mode
+            </span>
+            <h3>Lightning-Fast Idea Capture</h3>
+            <p>
+              Our keyboard-driven editor mode is designed for speed. Capture
+              thoughts as quickly as they come without breaking your flow.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Create nodes with Tab/Enter keys</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Navigate with arrow keys</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Reorganize with drag & drop</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Add descriptions with Shift+Enter</span>
+              </li>
+            </ul>
+            <a href="https://dumbnote.app/mindmap" class="feature-cta">
+              Try the editor
+              <span class="material-icons">arrow_forward</span>
+            </a>
+          </div>
+          <div class="feature-visual">
+            <span class="feature-visual-overlay">Interactive Demo</span>
+            <img
+              src="../assets/images/dumbnote-mindmap-editor.png"
+              alt="Editor mode interface showing keyboard shortcuts"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 2: Overview Mode -->
+        <div class="feature-showcase reverse">
+          <div class="feature-content">
+            <span class="feature-badge">
+              <span class="material-icons">zoom_out_map</span>
+              Overview Mode
+            </span>
+            <h3>See the Big Picture</h3>
+            <p>
+              Zoom out to get a bird's eye view of your entire knowledge
+              structure. Perfect for understanding connections and planning next
+              steps.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Smooth zoom controls</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Click to focus any area</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Export high-res SVG</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Print-friendly layouts</span>
+              </li>
+            </ul>
+            <a href="https://dumbnote.app/mindmap" class="feature-cta">
+              Explore overview
+              <span class="material-icons">arrow_forward</span>
+            </a>
+          </div>
+          <div class="feature-visual">
+            <span class="feature-visual-overlay">Zoom & Navigate</span>
+            <img
+              src="../assets/images/dumbnote-mindmap-overview.png"
+              alt="Overview mode showing complete mind map"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 3: Reader Mode -->
+        <div class="feature-showcase">
+          <div class="feature-content">
+            <span class="feature-badge">
+              <span class="material-icons">chrome_reader_mode</span>
+              Reader Mode
+            </span>
+            <h3>Share & Present Beautifully</h3>
+            <p>
+              Transform your mind maps into clean, readable presentations.
+              Perfect for sharing insights with your team or reviewing your own
+              work.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Distraction-free viewing</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Collapsible branches</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Export to Markdown</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Print-optimized layout</span>
+              </li>
+            </ul>
+            <a href="https://dumbnote.app/mindmap" class="feature-cta">
+              View reader mode
+              <span class="material-icons">arrow_forward</span>
+            </a>
+          </div>
+          <div class="feature-visual">
+            <span class="feature-visual-overlay">Clean Presentation</span>
+            <img
+              src="../assets/images/dumbnote-mindmap-reader-mode.png"
+              alt="Reader mode for clean presentation"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 4: Rich Media -->
+        <div class="feature-showcase reverse">
+          <div class="feature-content">
+            <span class="feature-badge">
+              <span class="material-icons">image</span>
+              Rich Media
+            </span>
+            <h3>Visual Thinking Enhanced</h3>
+            <p>
+              Add images, icons, and visual elements to your mind maps. Make
+              complex ideas more memorable and engaging with visual anchors.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Drag & drop images</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Inline image preview</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Color-coded node types</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Icon support for quick visual cues</span>
+              </li>
+            </ul>
+            <a href="https://dumbnote.app/mindmap" class="feature-cta">
+              Add visual elements
+              <span class="material-icons">arrow_forward</span>
+            </a>
+          </div>
+          <div class="feature-visual">
+            <span class="feature-visual-overlay">Media Support</span>
+            <img
+              src="../assets/images/dumbnote-mindmap-image-upload.png"
+              alt="Mind map with image support"
+            />
           </div>
         </div>
       </div>
@@ -1719,6 +2753,94 @@
             event_label: "html_file",
           });
         }
+      });
+
+      // Arrow Navigation Carousel
+      const slides = document.querySelectorAll(".carousel-slide");
+      const indicators = document.querySelectorAll(
+        ".carousel-indicators button"
+      );
+      const prevBtn = document.querySelector(".carousel-prev");
+      const nextBtn = document.querySelector(".carousel-next");
+      let currentSlide = 0;
+
+      function showSlide(index) {
+        // Hide all slides
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+
+        // Remove active from all indicators
+        indicators.forEach((indicator) => {
+          indicator.classList.remove("active");
+        });
+
+        // Show current slide
+        slides[index].classList.add("active");
+        indicators[index].classList.add("active");
+        currentSlide = index;
+      }
+
+      function nextSlide() {
+        const next = (currentSlide + 1) % slides.length;
+        showSlide(next);
+      }
+
+      function prevSlide() {
+        const prev = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(prev);
+      }
+
+      // Arrow button listeners
+      prevBtn.addEventListener("click", prevSlide);
+      nextBtn.addEventListener("click", nextSlide);
+
+      // Indicator listeners
+      indicators.forEach((indicator, index) => {
+        indicator.addEventListener("click", () => showSlide(index));
+      });
+
+      // Keyboard navigation
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowLeft") prevSlide();
+        if (e.key === "ArrowRight") nextSlide();
+      });
+
+      // Auto-advance
+      let autoAdvance;
+      
+      function startAutoAdvance() {
+        autoAdvance = setInterval(nextSlide, 4000);
+      }
+      
+      function stopAutoAdvance() {
+        clearInterval(autoAdvance);
+      }
+      
+      // Start auto-advance immediately
+      startAutoAdvance();
+
+      // Pause on hover
+      const carouselContainer = document.querySelector(".screenshots-carousel");
+      carouselContainer.addEventListener("mouseenter", stopAutoAdvance);
+      carouselContainer.addEventListener("mouseleave", startAutoAdvance);
+      
+      // Also pause when user interacts with controls
+      prevBtn.addEventListener("click", () => {
+        stopAutoAdvance();
+        startAutoAdvance();
+      });
+      
+      nextBtn.addEventListener("click", () => {
+        stopAutoAdvance();
+        startAutoAdvance();
+      });
+      
+      indicators.forEach((indicator) => {
+        indicator.addEventListener("click", () => {
+          stopAutoAdvance();
+          startAutoAdvance();
+        });
       });
     </script>
   </body>
