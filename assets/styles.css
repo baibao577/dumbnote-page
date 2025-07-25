@@ -180,11 +180,108 @@ ul {
   background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>');
 }
 
-/* Troubleshooting Section */
+/* Download Help Section */
+.download-help {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+.user-guide-btn {
+  color: var(--primary-pink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: all var(--transition-fast);
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-pink-lighter);
+}
+
+.user-guide-btn:hover {
+  background: var(--primary-pink-light);
+  color: var(--primary-pink-hover);
+}
+
+.help-separator {
+  color: var(--border-medium);
+}
+
+.troubleshooting-inline {
+  position: relative;
+}
+
+.troubleshooting-inline summary {
+  cursor: pointer;
+  color: var(--text-tertiary);
+  font-size: 0.85rem;
+  transition: color var(--transition-fast);
+  list-style: none;
+  user-select: none;
+}
+
+.troubleshooting-inline summary:hover {
+  color: var(--text-secondary);
+}
+
+.troubleshooting-inline[open] summary {
+  color: var(--text-secondary);
+}
+
+.troubleshooting-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  width: 320px;
+  box-shadow: var(--shadow-lg);
+  z-index: 10;
+  text-align: left;
+}
+
+.troubleshooting-dropdown p {
+  margin: 0 0 10px 0;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.troubleshooting-dropdown ol {
+  margin: 0 0 15px 0;
+  padding-left: 20px;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  text-align: left;
+}
+
+.troubleshooting-dropdown li {
+  margin-bottom: 5px;
+}
+
+.troubleshooting-link {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+}
+
+.troubleshooting-link a {
+  color: var(--primary-pink);
+  text-decoration: none;
+}
+
+.troubleshooting-link a:hover {
+  text-decoration: underline;
+}
+
+/* Old Troubleshooting Section - Hidden */
 .troubleshooting {
-  max-width: 600px;
-  margin: 30px auto 0;
-  padding: 0 20px;
+  display: none;
 }
 
 .troubleshooting-title {
@@ -343,12 +440,86 @@ ul {
   margin-left: calc(-50vw + 50%);
 }
 
+.feature-hero {
+  padding-bottom: 0;
+  overflow: hidden;
+}
+
 .feature:nth-child(odd) {
   background: var(--bg-primary);
 }
 
 .feature:nth-child(even) {
   background: var(--bg-secondary);
+}
+
+/* Hero Feature Section - Why DumbNote */
+.feature-hero .container {
+  grid-template-columns: 1fr !important;
+  max-width: 900px;
+  text-align: center;
+  direction: ltr !important;
+}
+
+.feature-hero .content {
+  padding: 0;
+  max-width: 100%;
+}
+
+.feature-hero .feature-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.feature-hero .feature-description {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.hero-features {
+  max-width: 800px;
+  margin: 0 auto 0;
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px 40px;
+}
+
+.hero-features li {
+  text-align: left;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-features li strong {
+  color: var(--primary-pink);
+  margin-bottom: 4px;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.feature-hero .screenshot {
+  width: 100% !important;
+  margin: -150px 0 0 0 !important;
+  padding: 0 !important;
+  overflow: hidden;
+  height: auto;
+  position: relative;
+}
+
+.feature-hero .screenshot img {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+  transform: translateY(20%) scale(1.2);
+  transform-origin: top center;
 }
 
 .feature .container {
@@ -371,14 +542,14 @@ ul {
 }
 
 /* Make screenshots overflow on one side */
-.feature:nth-child(odd) .screenshot {
+.feature:not(.feature-hero):nth-child(odd) .screenshot {
   position: relative;
   margin-left: -50vw;
   padding-left: calc(50vw - 600px);
   width: calc(100% + 50vw);
 }
 
-.feature:nth-child(even) .screenshot {
+.feature:not(.feature-hero):nth-child(even) .screenshot {
   position: relative;
   margin-right: -50vw;
   padding-right: calc(50vw - 600px);
@@ -386,13 +557,13 @@ ul {
 }
 
 @media (max-width: 1200px) {
-  .feature:nth-child(odd) .screenshot {
+  .feature:not(.feature-hero):nth-child(odd) .screenshot {
     margin-left: -30vw;
     padding-left: calc(30vw - 400px);
     width: calc(100% + 30vw);
   }
   
-  .feature:nth-child(even) .screenshot {
+  .feature:not(.feature-hero):nth-child(even) .screenshot {
     margin-right: -30vw;
     padding-right: calc(30vw - 400px);
     width: calc(100% + 30vw);
@@ -411,11 +582,6 @@ ul {
   border-radius: 0;
   box-shadow: none;
   display: block;
-  transition: transform var(--transition-base);
-}
-
-.feature:hover .screenshot img {
-  transform: scale(1.02);
 }
 
 .content {
@@ -484,8 +650,26 @@ b {
     font-size: 0.95rem;
   }
 
+  .download-help {
+    margin-top: 15px;
+  }
+
+  .troubleshooting-dropdown {
+    width: 280px;
+  }
+
   .feature {
     padding: 60px 0;
+  }
+
+  .feature-hero {
+    padding-bottom: 0;
+    padding-top: 40px;
+    overflow: hidden;
+  }
+
+  .feature-hero .screenshot {
+    margin: -50px 0 0 0 !important;
   }
 
   .feature .container {
@@ -517,6 +701,25 @@ b {
   .feature-title {
     font-size: 2.5rem;
     text-align: center;
+  }
+
+  .feature-hero .screenshot img {
+    transform: translateY(15%) scale(1);
+    max-width: 100%;
+  }
+
+  .feature-hero .content {
+    padding: 0 20px;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .hero-features li {
+    font-size: 0.9rem;
   }
 
   .feature-list-section {
@@ -714,11 +917,6 @@ b {
   border-radius: 0;
   overflow: hidden;
   box-shadow: none;
-  transition: transform var(--transition-base);
-}
-
-.mindmap-screenshot:hover {
-  transform: scale(1.02);
 }
 
 .mindmap-screenshot img {
@@ -862,11 +1060,18 @@ b {
     margin-bottom: 12px;
   }
 
+  .mindmap-btn-secondary,
   .mindmap-btn {
     font-size: 1rem;
     padding: 12px 30px;
     display: block;
+    width: 100%;
     text-align: center;
+    margin: 0 0 10px 0;
+  }
+
+  .mindmap-btn-secondary {
+    margin-right: 0;
   }
 }
 

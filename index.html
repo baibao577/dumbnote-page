@@ -107,23 +107,21 @@
           </a>
         </div>
         
-        <!-- Troubleshooting for macOS -->
-        <div class="troubleshooting">
-          <p class="troubleshooting-title">Having trouble opening DumbNote on macOS?</p>
-          <details class="troubleshooting-details">
-            <summary>Click here for help with "DumbNote can't be opened" error</summary>
-            <div class="troubleshooting-content">
-              <p><strong>If you see a security warning when opening DumbNote:</strong></p>
-              
-              <div>
-                <ol>
-                  <li><b>Right Click</b> on "DumbNote-mac-arm64.pkg" file, then select Open</li>
-                  <li>Once installation dialog appear, Click <b>install</b> and next</li>
-                  <li>After that DumbNote is ready in your Applications folder</li>
-                </ol>
-              </div>
-
-              <p><strong>If you still see warning, please follow this <a href="https://support.apple.com/en-eg/guide/mac-help/mchleab3a043/mac" target="_blank">step from Apple Guide</a></strong></p>
+        <div class="download-help">
+          <a href="user-guide/" class="user-guide-btn">
+            📖 User Guide
+          </a>
+          <span class="help-separator">•</span>
+          <details class="troubleshooting-inline">
+            <summary>Mac install issues?</summary>
+            <div class="troubleshooting-dropdown">
+              <p><strong>macOS Security Warning?</strong></p>
+              <ol>
+                <li><b>Right Click</b> on the .pkg file, then select Open</li>
+                <li>Click <b>Install</b> in the dialog</li>
+                <li>Find DumbNote in your Applications folder</li>
+              </ol>
+              <p class="troubleshooting-link">Still having issues? See <a href="https://support.apple.com/en-eg/guide/mac-help/mchleab3a043/mac" target="_blank">Apple's Guide</a></p>
             </div>
           </details>
         </div>
@@ -132,14 +130,8 @@
       <!-- Screenshot Section -->
       <div class="screenshot-section">
         <!-- Feature 1 -->
-        <div class="feature">
+        <div class="feature feature-hero">
           <div class="container">
-            <div class="screenshot">
-              <img
-                src="assets/images/dumbnote_fullscreen_mininmal.png"
-                alt="Dumbnote Minimal"
-              />
-            </div>
             <div class="content">
               <h2 class="feature-title">Why DumbNote?</h2>
             <p class="feature-description">
@@ -149,7 +141,7 @@
               you're drafting ideas, journaling, or documenting code,
               <b>your notes stay readable and editable anywhere, forever.</b>
             </p>
-            <ul>
+            <ul class="hero-features">
               <li>
                 <strong>One-click PDF export</strong> — Share, print, or archive
                 beautifully formatted notes.
@@ -171,7 +163,13 @@
                 files into DumbNote.
               </li>
             </ul>
-          </div>
+            </div>
+            <div class="screenshot">
+              <img
+                src="assets/images/dumbnote_fullscreen_mininmal.png"
+                alt="Dumbnote Minimal"
+              />
+            </div>
           </div>
         </div>
 
