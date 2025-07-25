@@ -1229,3 +1229,32 @@ b {
 .feature-column:nth-child(2) { transition-delay: 0.2s; }
 .feature-column:nth-child(3) { transition-delay: 0.3s; }
 .feature-column:nth-child(4) { transition-delay: 0.4s; }
+
+/* Product Hunt Badge */
+.product-hunt-badge {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 100;
+  opacity: 0.9;
+  transition: opacity var(--transition-fast);
+}
+
+.product-hunt-badge:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .product-hunt-badge {
+    position: static;
+    display: block;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .product-hunt-badge img {
+    max-width: 200px;
+    height: auto;
+  }
+}
