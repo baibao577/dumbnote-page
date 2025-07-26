@@ -1625,6 +1625,18 @@
         );
       }
 
+      /* Feature Screenshots Scaling */
+      @media (min-width: 769px) {
+        .feature-visual img {
+          transform: scale(1.3);
+          transform-origin: center center;
+        }
+        
+        .feature-visual {
+          overflow: visible;
+        }
+      }
+
       /* Responsive Design */
       @media (max-width: 768px) {
         .feature-showcase {
@@ -2069,8 +2081,51 @@
           </div>
         </div>
 
-        <!-- Feature 3: Reader Mode -->
+        <!-- Feature 3: Connection Mode -->
         <div class="feature-showcase">
+          <div class="feature-content">
+            <span class="feature-badge">
+              <span class="material-icons">hub</span>
+              Connection Mode
+            </span>
+            <h3>Visualize Complex Relationships</h3>
+            <p>
+              Create one-way or bidirectional connections between nodes to show dependencies, relationships, and information flow. Perfect for mapping complex systems and interconnected concepts.
+            </p>
+            <ul class="feature-points">
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Draw connections between any nodes</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>One-way or bidirectional arrows</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Shift+click to highlight all connections</span>
+              </li>
+              <li>
+                <span class="material-icons">check_circle</span>
+                <span>Visual clarity for complex relationships</span>
+              </li>
+            </ul>
+            <a href="https://dumbnote.app/mindmap" class="feature-cta">
+              Explore connections
+              <span class="material-icons">arrow_forward</span>
+            </a>
+          </div>
+          <div class="feature-visual">
+            <span class="feature-visual-overlay">Connection Focus</span>
+            <img
+              src="../assets/images/dumbnote-mindmap-connection-mode.png"
+              alt="Connection mode showing relationships between nodes"
+            />
+          </div>
+        </div>
+
+        <!-- Feature 4: Reader Mode -->
+        <div class="feature-showcase reverse">
           <div class="feature-content">
             <span class="feature-badge">
               <span class="material-icons">chrome_reader_mode</span>
@@ -2114,8 +2169,8 @@
           </div>
         </div>
 
-        <!-- Feature 4: Rich Media -->
-        <div class="feature-showcase reverse">
+        <!-- Feature 5: Rich Media -->
+        <div class="feature-showcase">
           <div class="feature-content">
             <span class="feature-badge">
               <span class="material-icons">image</span>
