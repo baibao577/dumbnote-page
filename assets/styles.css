@@ -1075,6 +1075,247 @@ b {
   }
 }
 
+/* Forgettie Section — mirrors mindmap structure with indigo accent
+   (#4f46e5 is Forgettie's brand color). */
+.forgettie-section {
+  width: 100%;
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(99, 102, 241, 0.08) 0%,
+    rgba(79, 70, 229, 0.05) 100%
+  );
+  margin: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+/* When the Forgettie section directly follows the Mindmap section,
+   collapse the external margins so they sit flush against each other.
+   Internal padding (80px each) still keeps titles breathing. */
+.mindmap-section:has(+ .forgettie-section) {
+  margin-bottom: 0;
+}
+.mindmap-section + .forgettie-section {
+  margin-top: 0;
+}
+
+.forgettie-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at 70% 50%,
+    rgba(99, 102, 241, 0.06) 0%,
+    transparent 40%
+  );
+  z-index: 0;
+}
+
+.forgettie-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.forgettie-title {
+  font-family: "Bebas Neue", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.forgettie-subtitle {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 50px;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.forgettie-subtitle strong {
+  color: #4f46e5;
+}
+
+.forgettie-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.forgettie-screenshot {
+  border-radius: 0;
+  overflow: hidden;
+  box-shadow: none;
+}
+
+.forgettie-screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.forgettie-content {
+  padding: 0 20px;
+}
+
+.forgettie-content p {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.forgettie-features {
+  margin-bottom: 40px;
+}
+
+.forgettie-features h3 {
+  font-family: "Oswald", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.forgettie-features ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+}
+
+.forgettie-features li {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 15px;
+  padding-left: 25px;
+  position: relative;
+  line-height: 1.6;
+  transition: color var(--transition-fast);
+}
+
+.forgettie-features li:hover {
+  color: var(--text-primary);
+}
+
+.forgettie-features li::before {
+  content: "→";
+  color: #4f46e5;
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+.forgettie-features li strong {
+  color: #4f46e5;
+}
+
+.forgettie-btn {
+  display: inline-block;
+  padding: 14px 40px;
+  background: #4f46e5;
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  box-shadow: 0 4px 15px rgba(79, 70, 229, 0.3);
+}
+
+.forgettie-btn:hover {
+  background: #4338ca;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.4);
+}
+
+.forgettie-btn-secondary {
+  display: inline-block;
+  padding: 14px 40px;
+  background: transparent;
+  color: #4f46e5;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  font-size: 1.1rem;
+  border: 2px solid #4f46e5;
+  margin-right: 10px;
+}
+
+.forgettie-btn-secondary:hover {
+  background: #eef2ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(79, 70, 229, 0.2);
+}
+
+@media (max-width: 768px) {
+  .forgettie-section {
+    padding: 60px 15px;
+    margin: 60px 0;
+  }
+
+  .forgettie-title {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .forgettie-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .forgettie-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .forgettie-content {
+    padding: 0;
+    text-align: left;
+  }
+
+  .forgettie-content p {
+    font-size: 1rem;
+  }
+
+  .forgettie-features h3 {
+    font-size: 1.1rem;
+  }
+
+  .forgettie-features li {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .forgettie-btn-secondary,
+  .forgettie-btn {
+    font-size: 1rem;
+    padding: 12px 30px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px 0;
+  }
+
+  .forgettie-btn-secondary {
+    margin-right: 0;
+  }
+}
+
 /* Why I Built This Section */
 .why-separator {
   border: none;

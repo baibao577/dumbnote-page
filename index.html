@@ -79,6 +79,22 @@
       }
     }
     </script>
+
+    <!-- Organization schema — ties dumbnote.app to forgettie.dumbnote.app
+         so Google treats the subdomain as a related property under the
+         same publisher. Powers authority/trust transfer to the new site. -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "dumbnote",
+      "url": "https://dumbnote.app",
+      "logo": "https://dumbnote.app/assets/images/favicon.png",
+      "sameAs": [
+        "https://forgettie.dumbnote.app"
+      ]
+    }
+    </script>
   </head>
   <body>
     <div class="container">
@@ -432,6 +448,38 @@
             <a href="/mindmap/landing.html" class="mindmap-btn-secondary">Learn More</a>
             <a href="https://dumbnote.app/mindmap" target="_blank" class="mindmap-btn">
               Start Mind Mapping Free →
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Forgettie Section (Full Width) -->
+    <section class="forgettie-section">
+      <div class="container">
+        <h2 class="forgettie-title">Also Try: Forgettie — Offline Subscription Tracker</h2>
+        <p class="forgettie-subtitle">
+          <strong>See what your subscriptions really cost you in a year.</strong> Netflix, car insurance, that domain you bought in 2019 — Forgettie puts every recurring bill on one page so the yearly total stops sneaking up on you. Free, offline, no account, no bank login.
+        </p>
+        <div class="forgettie-wrapper">
+          <div class="forgettie-screenshot">
+            <img src="assets/images/forgettie-teaser.jpg" alt="Forgettie offline subscription tracker — see what recurring payments really cost you per year" />
+          </div>
+          <div class="forgettie-content">
+            <div class="forgettie-features">
+              <h3>Subscription Tracker Features:</h3>
+              <ul>
+                <li><strong>Yearly Totals</strong> — $9.99/mo quietly becomes $120 a year. Now you see it.</li>
+                <li><strong>Private by Design</strong> — No account, no bank login, data stays on your device.</li>
+                <li><strong>Quiet Reminders</strong> — Know what's due before it lands, without push-notification spam.</li>
+                <li><strong>Calendar Export</strong> — One-tap .ics to Google, Apple, or Outlook Calendar.</li>
+                <li><strong>Works Offline</strong> — Installs as a PWA on iOS, Android, or desktop.</li>
+                <li><strong>Free, Forever</strong> — No subscription for the subscription tracker.</li>
+              </ul>
+            </div>
+            <a href="https://forgettie.dumbnote.app/about/" class="forgettie-btn-secondary">Learn More</a>
+            <a href="https://forgettie.dumbnote.app" target="_blank" class="forgettie-btn">
+              Track Subscriptions Free →
             </a>
           </div>
         </div>
