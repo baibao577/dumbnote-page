@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dumbnote.app/sitemap-index.xml
