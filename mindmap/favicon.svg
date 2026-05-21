@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dumbnote">
+  <title>Dumbnote</title>
+  <defs>
+    <!-- Sunrise gradient: 45 degrees, bottom-left rose, middle amber, top-right cyan.
+         Matches the brand grad-sunrise token used on Nav brand-mark,
+         primary CTAs, and H1 emphasis. -->
+    <linearGradient id="dumbnote-sunrise" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%"  stop-color="#FF4593"/>
+      <stop offset="50%" stop-color="#FF8E53"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- Donut mask for the white dot: outer circle visible (the ring),
+         inner circle hidden (the hole). The gradient underneath shows
+         through the hole. -->
+    <mask id="dumbnote-donut">
+      <circle cx="32" cy="32" r="14" fill="white"/>
+      <circle cx="32" cy="32" r="5"  fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Rounded square filled with the sunrise gradient. -->
+  <rect x="0" y="0" width="64" height="64" rx="14" fill="url(#dumbnote-sunrise)"/>
+
+  <!-- White donut overlay, centered. The mask cuts the hole so the
+       gradient remains visible through the center. -->
+  <rect x="0" y="0" width="64" height="64" fill="#FFFFFF" mask="url(#dumbnote-donut)"/>
+</svg>
