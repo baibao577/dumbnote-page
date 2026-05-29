@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Redirecting…</title>
+  <script>
+    (function () {
+      var l = window.location;
+      var p = l.pathname;
+      if (p === '/mindmap' || p.indexOf('/mindmap/') === 0) {
+        var rest = p.replace(/^\/mindmap\/?/, '');
+        var qs = l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '';
+        l.replace(
+          l.protocol + '//' + l.host + '/mindmap/?/' +
+          rest.replace(/&/g, '~and~') + qs + l.hash
+        );
+      }
+    })();
+  </script>
+</head>
+<body>
+  <h1>Page not found</h1>
+  <p><a href="/">Return to dumbnote.app</a></p>
+</body>
+</html>
