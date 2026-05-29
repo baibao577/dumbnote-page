@@ -1,0 +1,16 @@
+{
+  "name": "Dumbnote — Mindmap & Notes",
+  "short_name": "Dumbnote",
+  "description": "Offline-first visual mind mapping and notes.",
+  "start_url": "/mindmap/",
+  "scope": "/mindmap/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "any",
+  "icons": [
+    { "src": "/mindmap/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/mindmap/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/mindmap/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
