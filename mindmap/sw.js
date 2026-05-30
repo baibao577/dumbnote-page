@@ -26,6 +26,25 @@ const SHELL = [
   `${BASE}manifest.webmanifest`,
 ];
 
+// fetch() transparently decompresses gzip/br but leaves the response's
+// Content-Encoding + (compressed) Content-Length headers intact. The Cache
+// API stores the DECOMPRESSED body together with those stale headers, so a
+// later cache hit makes the browser try to re-inflate already-plain bytes
+// and abort the navigation (Firefox: NS_BINDING_ABORTED). Rebuild the
+// response from decoded bytes with the encoding headers removed so the
+// cached copy is self-consistent.
+async function cacheableCopy(response) {
+  const headers = new Headers(response.headers);
+  headers.delete('content-encoding');
+  headers.delete('content-length');
+  const body = await response.blob();
+  return new Response(body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 self.addEventListener('install', (e) => {
   e.waitUntil(
     caches.open(CACHE).then((c) =>
@@ -34,7 +53,7 @@ self.addEventListener('install', (e) => {
       Promise.all(
         SHELL.map((url) =>
           fetch(url, { cache: 'reload' })
-            .then((r) => (r.ok ? c.put(url, r) : null))
+            .then(async (r) => (r.ok ? c.put(url, await cacheableCopy(r)) : null))
             .catch(() => null),
         ),
       ),
@@ -66,19 +85,18 @@ self.addEventListener('fetch', (e) => {
   if (url.origin !== self.location.origin) return;
   if (!url.pathname.startsWith(BASE)) return;
 
-  // SPA navigations: network-first so a connected user sees fresh
-  // deploys immediately; fall back to cached shell when offline.
+  // SPA navigations: cache-first against the shell that `install`
+  // pre-cached for this BUILD_SHA. Instant render, no multi-MB refetch,
+  // and the cached copy has normalized headers so it decodes cleanly.
+  // Deploy freshness is handled by the SHA-stamped CACHE + the
+  // UpdateAvailableBanner, not by re-fetching here. On a cache miss we
+  // fall back to a clean network pass-through (no clone/tee), then to
+  // BASE when offline.
   if (req.mode === 'navigate') {
     e.respondWith(
-      fetch(req)
-        .then((r) => {
-          if (r.ok) {
-            const clone = r.clone();
-            caches.open(CACHE).then((c) => c.put(`${BASE}index.html`, clone));
-          }
-          return r;
-        })
-        .catch(() => caches.match(`${BASE}index.html`).then((m) => m || caches.match(BASE))),
+      caches.match(`${BASE}index.html`).then(
+        (cached) => cached || fetch(req).catch(() => caches.match(BASE)),
+      ),
     );
     return;
   }
@@ -89,8 +107,9 @@ self.addEventListener('fetch', (e) => {
       if (cached) return cached;
       return fetch(req).then((r) => {
         if (r.ok && r.type === 'basic') {
-          const clone = r.clone();
-          caches.open(CACHE).then((c) => c.put(req, clone));
+          cacheableCopy(r.clone()).then((copy) =>
+            caches.open(CACHE).then((c) => c.put(req, copy)),
+          );
         }
         return r;
       });
