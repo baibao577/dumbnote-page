@@ -18,11 +18,90 @@
     
     <url>
         <loc>https://dumbnote.app/mindmap/landing.html</loc>
-        <lastmod>2025-01-21</lastmod>
+        <lastmod>2026-05-31</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    
+
+    <!-- Mindmap Audience Pages -->
+    <url>
+        <loc>https://dumbnote.app/mindmap/for-students.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/for-researchers.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/for-adhd.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/adhd-brain-dump-tool.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/adhd-project-planning.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/adhd-executive-dysfunction-notes.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/literature-review-mind-map.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <!-- Mindmap Feature Pages -->
+    <url>
+        <loc>https://dumbnote.app/mindmap/features/graph.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/features/rich-mind-map-nodes.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/features/reader-mode.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/features/offline-collaboration.html</loc>
+        <lastmod>2026-05-31</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+
     <!-- User Guide Pages -->
     <url>
         <loc>https://dumbnote.app/user-guide/</loc>

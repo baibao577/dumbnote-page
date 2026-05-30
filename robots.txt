@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+# Downloadable single-file build (~13 MB) — duplicate of the app, not a content page.
+Disallow: /mindmap/offline.html
 
 Sitemap: https://dumbnote.app/sitemap-index.xml
