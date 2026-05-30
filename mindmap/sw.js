@@ -11,7 +11,7 @@
 //      build. Each release gets a unique CACHE name, which triggers
 //      updatefound on the user's next visit.
 
-const BUILD_SHA = 'de65273';
+const BUILD_SHA = '3383ff3';
 const CACHE = `dumbnote-shell-${BUILD_SHA}`;
 const BASE = '/mindmap/';
 
@@ -98,14 +98,20 @@ self.addEventListener('fetch', (e) => {
   if (url.origin !== self.location.origin) return;
   if (!url.pathname.startsWith(BASE)) return;
 
-  // SPA navigations: cache-first against the shell that `install`
-  // pre-cached for this BUILD_SHA. Instant render, no multi-MB refetch,
-  // and the cached copy has normalized headers so it decodes cleanly.
+  // SPA navigations to the app's OWN routes get the cached shell:
+  // instant render, no multi-MB refetch, normalized headers so it
+  // decodes cleanly. The app uses EXTENSIONLESS routes (/mindmap/,
+  // /mindmap/maps/:id, /mindmap/snapshots…). Real `.html` pages — the
+  // static landing/marketing site (landing.html, for-*.html,
+  // features/*.html, offline.html) — must NOT be replaced by the SPA
+  // shell, or they'd boot the app, fail to match a route, and redirect
+  // to /mindmap/. So only extensionless navigations take the shell;
+  // `.html` (and everything else) falls through to the cache-first
+  // static handler below and is served as itself.
   // Deploy freshness is handled by the SHA-stamped CACHE + the
-  // UpdateAvailableBanner, not by re-fetching here. On a cache miss we
-  // fall back to a clean network pass-through (no clone/tee), then to
-  // BASE when offline.
-  if (req.mode === 'navigate') {
+  // UpdateAvailableBanner. On a cache miss we fall back to a clean
+  // network pass-through (no clone/tee), then to BASE when offline.
+  if (req.mode === 'navigate' && !url.pathname.endsWith('.html')) {
     e.respondWith(
       caches.match(`${BASE}index.html`).then(
         (cached) => cached || fetch(req).catch(() => caches.match(BASE)),

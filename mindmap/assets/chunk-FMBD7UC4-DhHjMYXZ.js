@@ -1,4 +1,4 @@
-!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019e79d5-102c-75d3-abdf-0eaac52ec088")}catch(e){}}();import{a as e}from"./mermaid.core-D6cjHwKd.js";var l=e(()=>`
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019e79e3-0370-7120-8cd9-a62f161c1d41")}catch(e){}}();import{a as e}from"./mermaid.core-D6cjHwKd.js";var l=e(()=>`
   /* Font Awesome icon styling - consolidated */
   .label-icon {
     display: inline-block;
@@ -15,4 +15,4 @@
 `,"getIconStyles");export{l as g};
 //# sourceMappingURL=chunk-FMBD7UC4-DhHjMYXZ.js.map
 
-//# chunkId=019e79d5-102c-75d3-abdf-0eaac52ec088
+//# chunkId=019e79e3-0370-7120-8cd9-a62f161c1d41
