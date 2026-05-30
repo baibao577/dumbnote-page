@@ -11,9 +11,21 @@
 //      build. Each release gets a unique CACHE name, which triggers
 //      updatefound on the user's next visit.
 
-const BUILD_SHA = '09f79d1';
+const BUILD_SHA = 'de65273';
 const CACHE = `dumbnote-shell-${BUILD_SHA}`;
 const BASE = '/mindmap/';
+
+// Hashed JS/CSS chunks of the multi-chunk online build, injected by
+// scripts/compose-dist.mjs (it replaces the placeholder with a JSON
+// array of '/mindmap/assets/...' paths). Precaching the FULL list at
+// install means a client on an old SW keeps every chunk it needs even
+// after a new deploy replaces the files server-side — no stale-chunk
+// 404s. Stays [] in source / the standalone build (the placeholder
+// isn't valid JSON, so the try/catch yields an empty list and install
+// just precaches the static shell below).
+let ASSETS = [];
+try { ASSETS = JSON.parse('["/mindmap/assets/MindmapFirst-CrJ7eOIU.js","/mindmap/assets/MindmapFirst-DidsImmi.css","/mindmap/assets/SnapshotsSidebarContext-DK6dvwt_.js","/mindmap/assets/UPNG-D-eZ5iCC.js","/mindmap/assets/arc-Dl94iM2L.js","/mindmap/assets/architectureDiagram-3BPJPVTR-bo_dyhSC.js","/mindmap/assets/blockDiagram-GPEHLZMM-Ca1fhIFw.js","/mindmap/assets/c4Diagram-AAUBKEIU-uCe-EC5g.js","/mindmap/assets/channel-PLC1uuNX.js","/mindmap/assets/chunk-2J33WTMH-CE2-ZoFb.js","/mindmap/assets/chunk-4BX2VUAB-C1inxlw7.js","/mindmap/assets/chunk-55IACEB6-D2oULCSN.js","/mindmap/assets/chunk-727SXJPM-CTLkmtkX.js","/mindmap/assets/chunk-AQP2D5EJ-CNFaeyP-.js","/mindmap/assets/chunk-FMBD7UC4-DhHjMYXZ.js","/mindmap/assets/chunk-ND2GUHAM-BlXB_hFJ.js","/mindmap/assets/chunk-QZHKN3VN-p2Z7tjGp.js","/mindmap/assets/classDiagram-4FO5ZUOK-DJM586Dj.js","/mindmap/assets/classDiagram-v2-Q7XG4LA2-DJM586Dj.js","/mindmap/assets/cose-bilkent-S5V4N54A-DqmByWoL.js","/mindmap/assets/cytoscape.esm-CkSuTymj.js","/mindmap/assets/dagre-BM42HDAG-B0byiTGE.js","/mindmap/assets/defaultLocale-CrowFXzY.js","/mindmap/assets/diagram-2AECGRRQ-D1xF6tw0.js","/mindmap/assets/diagram-5GNKFQAL-Bzv3ZpCM.js","/mindmap/assets/diagram-KO2AKTUF-EHmIr2Kf.js","/mindmap/assets/diagram-LMA3HP47-BV2aSsXz.js","/mindmap/assets/diagram-OG6HWLK6-6ByYa60x.js","/mindmap/assets/erDiagram-TEJ5UH35-n-Q03ZDs.js","/mindmap/assets/flowDiagram-I6XJVG4X-ivw8xTBQ.js","/mindmap/assets/ganttDiagram-6RSMTGT7-6-z5p7KA.js","/mindmap/assets/gitGraphDiagram-PVQCEYII-BPHL5kye.js","/mindmap/assets/graph-D2o_JWn5.js","/mindmap/assets/hostedRooms-UUQVrfEl.js","/mindmap/assets/index-BkD7Hj8s.js","/mindmap/assets/index-C_wB8eef.js","/mindmap/assets/index-DOot-1bs.js","/mindmap/assets/index-VSQu6OdV.css","/mindmap/assets/infoDiagram-5YYISTIA-B37YCnQt.js","/mindmap/assets/init-Gi6I4Gst.js","/mindmap/assets/ishikawaDiagram-YF4QCWOH-DaDvLgq9.js","/mindmap/assets/journeyDiagram-JHISSGLW-C71uJ_u8.js","/mindmap/assets/kanban-definition-UN3LZRKU-DP5gyAlN.js","/mindmap/assets/layout-UJbxhwF7.js","/mindmap/assets/linear-BxSLk3I7.js","/mindmap/assets/mermaid.core-D6cjHwKd.js","/mindmap/assets/mindmap-definition-RKZ34NQL-DpGIByCK.js","/mindmap/assets/openShareLiveDialog-CioYtGr0.js","/mindmap/assets/ordinal-D8o73TQ0.js","/mindmap/assets/pieDiagram-4H26LBE5-vEkSuN8A.js","/mindmap/assets/quadrantDiagram-W4KKPZXB-qOwxRcDE.js","/mindmap/assets/rejoinRoom-BT_bD9Qk.js","/mindmap/assets/requirementDiagram-4Y6WPE33-Bw1MXXL0.js","/mindmap/assets/roomIdentity-DkohaLWS.js","/mindmap/assets/sankeyDiagram-5OEKKPKP-DKxLlrK3.js","/mindmap/assets/sequenceDiagram-3UESZ5HK-Bfmlra0K.js","/mindmap/assets/stateDiagram-AJRCARHV-BJwBPn82.js","/mindmap/assets/stateDiagram-v2-BHNVJYJU-B7HhGBwD.js","/mindmap/assets/timeline-definition-PNZ67QCA-DkmdD_64.js","/mindmap/assets/transform-C3k1rBga.js","/mindmap/assets/useShare-CpSV87JB.js","/mindmap/assets/vennDiagram-CIIHVFJN-CtOqmcv8.js","/mindmap/assets/wardley-L42UT6IY-CIZyGQCA.js","/mindmap/assets/wardleyDiagram-YWT4CUSO-o_50ekSx.js","/mindmap/assets/xychartDiagram-2RQKCTM6-CeOz7Tz_.js"]'); } catch { /* placeholder not stamped */ }
+
 const SHELL = [
   BASE,
   `${BASE}index.html`,
@@ -24,6 +36,7 @@ const SHELL = [
   `${BASE}icon-512-maskable.png`,
   `${BASE}apple-touch-icon.png`,
   `${BASE}manifest.webmanifest`,
+  ...ASSETS,
 ];
 
 // fetch() transparently decompresses gzip/br but leaves the response's
