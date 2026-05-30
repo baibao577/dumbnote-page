@@ -11,7 +11,7 @@
 //      build. Each release gets a unique CACHE name, which triggers
 //      updatefound on the user's next visit.
 
-const BUILD_SHA = '4aa7681';
+const BUILD_SHA = '09f79d1';
 const CACHE = `dumbnote-shell-${BUILD_SHA}`;
 const BASE = '/mindmap/';
 const SHELL = [
