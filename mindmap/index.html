@@ -167,10 +167,45 @@
         gtag('config', 'G-WG386CVPCP');
       }
     </script>
-    <script type="module" crossorigin src="/mindmap/assets/index-C0nJYe6U.js"></script>
-    <link rel="stylesheet" crossorigin href="/mindmap/assets/index-VSQu6OdV.css">
+    <style>
+      /* Boot splash — inline so it needs no external CSS/JS to render. */
+      #app-splash {
+        position: fixed;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #ffffff; /* matches --background (hsl(0 0% 100%)) so there's no flash on mount */
+      }
+      #app-splash .app-splash__spinner {
+        width: 28px;
+        height: 28px;
+        border: 3px solid #e2e8f0; /* slate-200 */
+        border-top-color: #475569; /* slate-600 */
+        border-radius: 50%;
+        animation: app-splash-spin 0.7s linear infinite;
+      }
+      @keyframes app-splash-spin {
+        to { transform: rotate(360deg); }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #app-splash .app-splash__spinner { animation-duration: 1.6s; }
+      }
+    </style>
+    <script type="module" crossorigin src="/mindmap/assets/index-DTh9R6DJ.js"></script>
+    <link rel="stylesheet" crossorigin href="/mindmap/assets/index-ztqi1p3S.css">
   </head>
   <body>
-    <div id="app"></div>
+    <!-- Instant boot splash: painted from static HTML+CSS before any JS runs,
+         so a cold/slow first load shows a spinner instead of a blank white
+         page during the entry-chunk download + eval. Vue's app.mount('#app')
+         replaces #app's contents on mount, so this is auto-removed — no JS
+         teardown needed. The canvas route then shows its own loading overlay
+         (App.vue) until the map renders, for a continuous loading state. -->
+    <div id="app">
+      <div id="app-splash" role="status" aria-label="Loading">
+        <div class="app-splash__spinner"></div>
+      </div>
+    </div>
   </body>
 </html>
