@@ -1,0 +1,4 @@
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019e7ee4-7613-7002-9fa8-6ca2eada6bbe")}catch(e){}}();import{a,B as w,at as x}from"./mermaid.core-BTQAsyc4.js";var g=a((t,e,i,r)=>{t.attr("class",i);const{width:o,height:h,x:n,y:c}=u(t,e);w(t,h,o,r);const s=B(n,c,o,h,e);t.attr("viewBox",s),x.debug(`viewBox configured: ${s} with padding: ${e}`)},"setupViewPortForSVG"),u=a((t,e)=>{const i=t.node()?.getBBox()||{width:0,height:0,x:0,y:0};return{width:i.width+e*2,height:i.height+e*2,x:i.x,y:i.y}},"calculateDimensionsWithPadding"),B=a((t,e,i,r,o)=>`${t-o} ${e-o} ${i} ${r}`,"createViewBox");export{g as s};
+//# sourceMappingURL=chunk-2J33WTMH-lkIWdiB5.js.map
+
+//# chunkId=019e7ee4-7613-7002-9fa8-6ca2eada6bbe
