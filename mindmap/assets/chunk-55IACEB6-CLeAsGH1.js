@@ -1,0 +1,4 @@
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019e843d-07e6-79d1-873f-4d64db21f30f")}catch(e){}}();import{a}from"./mermaid.core-CTymcLfW.js";import{s as o}from"./transform-C3k1rBga.js";var d=a((t,e)=>{let n;return e==="sandbox"&&(n=o("#i"+t)),(e==="sandbox"?o(n.nodes()[0].contentDocument.body):o("body")).select(`[id="${t}"]`)},"getDiagramElement");export{d as g};
+//# sourceMappingURL=chunk-55IACEB6-CLeAsGH1.js.map
+
+//# chunkId=019e843d-07e6-79d1-873f-4d64db21f30f
