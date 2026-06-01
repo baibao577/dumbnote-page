@@ -1,0 +1,5 @@
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019e8463-06ea-7ae0-98cb-0753db5f6b8b")}catch(e){}}();import{a as e,at as s,aO as n,B as i}from"./mermaid.core-CuE7Z0-9.js";import{p}from"./wardley-L42UT6IY-D_trH9DI.js";import"./index-BWiOL1IO.js";import"./transform-C3k1rBga.js";var g={parse:e(async r=>{const a=await p("info",r);s.debug(a)},"parse")},v={version:"11.15.0"},d=e(()=>v.version,"getVersion"),m={getVersion:d},c=e((r,a,o)=>{s.debug(`rendering info diagram
+`+r);const t=n(a);i(t,100,400,!0),t.append("g").append("text").attr("x",100).attr("y",40).attr("class","version").attr("font-size",32).style("text-anchor","middle").text(`v${o}`)},"draw"),f={draw:c},w={parser:g,db:m,renderer:f};export{w as diagram};
+//# sourceMappingURL=infoDiagram-5YYISTIA-DxUPqfLr.js.map
+
+//# chunkId=019e8463-06ea-7ae0-98cb-0753db5f6b8b
