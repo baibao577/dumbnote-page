@@ -16,13 +16,21 @@
          listener landed on every page and froze scrolling everywhere.
 
          This forces touchstart/touchmove on the root targets to passive
-         (overriding explicit passive:false) — but ONLY during boot, then stops
-         once `load` fires. The window matters: SortableJS's always-on listener
-         registers during initial module eval (before load) and gets
-         passivated → freeze gone. Its DURING-DRAG listener (also `document`
-         touchmove, but added only when the user starts dragging a card, always
-         after load) is left non-passive, so it can still preventDefault
+         (overriding explicit passive:false) — but ONLY while no pointer is
+         down. The discriminator is gesture state, not a one-shot boot window:
+         SortableJS's always-on listener registers at module eval (when its
+         chunk loads, never mid-gesture) → caught while forcing → passivated →
+         freeze gone. Its DURING-DRAG listeners (also `document` touchmove, but
+         added synchronously when the user presses a card, i.e. while a pointer
+         IS down) are left non-passive, so they can still preventDefault
          page-scroll while dragging → the kanban drag keeps working on touch.
+
+         Why gesture state and not `load`: the Snapshots route (and with it
+         vuedraggable/SortableJS) is now lazy-loaded (src/router/index.js), so
+         SortableJS evals on the first /snapshots visit — long AFTER `load`. A
+         one-shot "stop forcing at load" window would miss it entirely and the
+         always-on listener would land non-passive → the freeze returns. Keying
+         on pointer-down state catches the listener whenever its chunk loads.
 
          Must run BEFORE the app bundle / before SortableJS registers, which an
          inline head script guarantees regardless of bundler module ordering.
@@ -48,12 +56,26 @@
           }
           return _add.call(this, type, listener, options);
         };
-        // Stop forcing once boot is done (SortableJS's always-on listener is
-        // already registered + passivated). Drag-time listeners register later
-        // and stay non-passive so the kanban drag still works on touch.
-        window.addEventListener('load', function () {
-          setTimeout(function () { forcing = false; }, 0);
-        }, { once: true });
+        // Force-passivate root-target touch listeners EXCEPT while a pointer
+        // is down (a drag in progress). SortableJS's always-on #973 listener
+        // registers at module eval — now lazily, on first /snapshots visit,
+        // never mid-gesture — so it's caught (forcing=true) and passivated. Its
+        // drag-time listeners register synchronously on pointerdown
+        // (forcing=false) and stay non-passive so the kanban card drag can
+        // still preventDefault page-scroll on touch. Capture phase ensures
+        // forcing flips BEFORE SortableJS's own target-phase press handler runs
+        // and registers those drag-time listeners. These toggles go through the
+        // original addEventListener (so the patch above doesn't recurse on
+        // them) and only set a flag, so passive is correct.
+        function arm() { forcing = true; }
+        function disarm() { forcing = false; }
+        var armOpts = { passive: true, capture: true };
+        _add.call(window, 'pointerdown', disarm, armOpts);
+        _add.call(window, 'touchstart', disarm, armOpts);
+        _add.call(window, 'pointerup', arm, armOpts);
+        _add.call(window, 'pointercancel', arm, armOpts);
+        _add.call(window, 'touchend', arm, armOpts);
+        _add.call(window, 'touchcancel', arm, armOpts);
       })();
     </script>
 
@@ -192,8 +214,8 @@
         #app-splash .app-splash__spinner { animation-duration: 1.6s; }
       }
     </style>
-    <script type="module" crossorigin src="/mindmap/assets/index-DzurjWp1.js"></script>
-    <link rel="stylesheet" crossorigin href="/mindmap/assets/index-BdZ8hsoS.css">
+    <script type="module" crossorigin src="/mindmap/assets/index-bC2WxDXR.js"></script>
+    <link rel="stylesheet" crossorigin href="/mindmap/assets/index-PNKySrbV.css">
   </head>
   <body>
     <!-- Instant boot splash: painted from static HTML+CSS before any JS runs,
