@@ -1,4 +1,4 @@
-!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019ea2fd-e241-7cb0-aa87-92e0f5217d90")}catch(e){}}();import{a as e}from"./mermaid.core-CI73nhpX.js";var l=e(()=>`
+!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019ea31d-5bf9-7fb0-8918-5f782dd82c95")}catch(e){}}();import{a as e}from"./mermaid.core-CI73nhpX.js";var l=e(()=>`
   /* Font Awesome icon styling - consolidated */
   .label-icon {
     display: inline-block;
@@ -15,4 +15,4 @@
 `,"getIconStyles");export{l as g};
 //# sourceMappingURL=chunk-FMBD7UC4-DUQxVDX9.js.map
 
-//# chunkId=019ea2fd-e241-7cb0-aa87-92e0f5217d90
+//# chunkId=019ea31d-5bf9-7fb0-8918-5f782dd82c95

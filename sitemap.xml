@@ -102,6 +102,21 @@
         <priority>0.7</priority>
     </url>
 
+    <!-- Mindmap Legal Pages -->
+    <url>
+        <loc>https://dumbnote.app/mindmap/privacy.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://dumbnote.app/mindmap/terms.html</loc>
+        <lastmod>2026-06-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
     <!-- User Guide Pages -->
     <url>
         <loc>https://dumbnote.app/user-guide/</loc>
