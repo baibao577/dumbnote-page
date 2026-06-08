@@ -1,4 +1,0 @@
-!function(){try{var e="undefined"!=typeof window?window:"undefined"!=typeof global?global:"undefined"!=typeof globalThis?globalThis:"undefined"!=typeof self?self:{},n=(new e.Error).stack;n&&(e._posthogChunkIds=e._posthogChunkIds||{},e._posthogChunkIds[n]="019ea81e-480b-7490-b3e3-459c0a3f8c02")}catch(e){}}();import{a,w as c,aj as x}from"./mermaid.core-Iste6fM6.js";var g=a((e,t,i,r)=>{e.attr("class",i);const{width:o,height:h,x:n,y:w}=u(e,t);c(e,h,o,r);const s=B(n,w,o,h,t);e.attr("viewBox",s),x.debug(`viewBox configured: ${s} with padding: ${t}`)},"setupViewPortForSVG"),u=a((e,t)=>{const i=e.node()?.getBBox()||{width:0,height:0,x:0,y:0};return{width:i.width+t*2,height:i.height+t*2,x:i.x,y:i.y}},"calculateDimensionsWithPadding"),B=a((e,t,i,r,o)=>`${e-o} ${t-o} ${i} ${r}`,"createViewBox");export{g as s};
-//# sourceMappingURL=chunk-2J33WTMH-B8PX4yrc.js.map
-
-//# chunkId=019ea81e-480b-7490-b3e3-459c0a3f8c02
